@@ -30,25 +30,52 @@ class object_onoff(settings_object):
     def get_value(self):
         return self.switch.get_state()
 
+class object_entry(settings_object):
+    def __init__(self):
+        super().__init__()
+        self.entry = Gtk.Entry()
+        self.label = Gtk.Label()
+        self.image = Gtk.Image()
+        self.pack_start(self.image, False, False, 3)
+        self.pack_start(self.label, False, False, 3)
+        self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(self.entry, False, False, 3)
+        self.show_all()
+
+    def set_data(self, data):
+        if "label" in data:
+           self.label.set_text(data["label"])
+        if "image" in data:
+            self.image.set_from_icon_name(data["image"],0)
+        if "value" in data:
+           self.entry.set_text(data["value"])
+
+    def get_value(self):
+        return self.entry.get_text()
+
 class object_selection(settings_object):
     def __init__(self):
         super().__init__()
         self.label = Gtk.Label()
         self.combo = Gtk.ComboBoxText()
+        self.image = Gtk.Image()
+        self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
         self.pack_start(Gtk.Label(),True, True, 3)
         self.pack_start(self.combo, False, False, 3)
+        self.show_all()
 
     def set_data(self,data):
         if "label" in data:
             self.label.set_text(data["label"])
+        if "image" in data:
+            self.image.set_from_icon_name(data["image"],0)
         if "options" in data:
             print(data["options"])
             for opt in data["options"]:
                 print(opt)
                 self.combo.append_text(opt)
             self.combo.set_active(0)
-        self.show_all()
 
     def get_value(self):
         tree_iter = self.combo.get_active_iter()
@@ -62,12 +89,13 @@ class Settings:
     def __init__(self):
         self.ONOFF=0
         self.COMBO=1
+        self.ENTRY=2
         self.widgets = {}
 
     def get(self):
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         for w in self.widgets:
-            box.add(self.widgets[w])
+            box.pack_start(self.widgets[w], False, False, 5)
         box.show()
         return box
 
@@ -76,6 +104,8 @@ class Settings:
             obj = object_onoff()
         if type == self.COMBO:
             obj = object_selection()
+        if type == self.ENTRY:
+            obj = object_entry()
         self.widgets[name] = obj
         obj.set_data(data)
 
@@ -89,7 +119,8 @@ if __name__ == "__main__":
     w = Gtk.Window()
     s = Settings()
     s.add_option("test",s.ONOFF,{"label":"Test","image":"gtk-ok"})
-    s.add_option("testf",s.COMBO,{"label":"Test","options":{"gtk-no","gtk-yes"}})
+    s.add_option("testf",s.COMBO,{"label":"Test", "image": "user-home","options":{"gtk-no","gtk-yes"}})
+    s.add_option("test2",s.ENTRY,{"label":"Test", "image": "gtk-no", "value":"test"})
     w.add(s.get())
     w.show()
     print(s.dump())
