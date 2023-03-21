@@ -52,6 +52,34 @@ class object_entry(settings_object):
 
     def get_value(self):
         return self.entry.get_text()
+class object_number(settings_object):
+    def __init__(self):
+        super().__init__()
+        self.spinbutton = Gtk.SpinButton()
+        self.label = Gtk.Label()
+        self.image = Gtk.Image()
+        self.pack_start(self.image, False, False, 3)
+        self.pack_start(self.label, False, False, 3)
+        self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(self.spinbutton, False, False, 3)
+        self.show_all()
+
+    def set_data(self, data):
+        if "label" in data:
+           self.label.set_text(data["label"])
+        if "image" in data:
+            self.image.set_from_icon_name(data["image"],0)
+        if "min" in data and "max" in data:
+           step = 1
+           if "step" in data:
+              step = int(data["step"])
+           self.spinbutton.set_increments(step, step)
+           self.spinbutton.set_range(int(data["min"]), int(data["max"]))
+        if "value" in data:
+            self.spinbutton.set_value(int(data["value"]))
+
+    def get_value(self):
+        return self.spinbutton.get_value()
 
 class object_selection(settings_object):
     def __init__(self):
@@ -90,6 +118,7 @@ class Settings:
         self.ONOFF=0
         self.COMBO=1
         self.ENTRY=2
+        self.NUMBER=3
         self.widgets = {}
 
     def get(self):
@@ -106,6 +135,8 @@ class Settings:
             obj = object_selection()
         if type == self.ENTRY:
             obj = object_entry()
+        if type == self.NUMBER:
+            obj = object_number()
         self.widgets[name] = obj
         obj.set_data(data)
 
@@ -121,6 +152,7 @@ if __name__ == "__main__":
     s.add_option("test",s.ONOFF,{"label":"Test","image":"gtk-ok"})
     s.add_option("testf",s.COMBO,{"label":"Test", "image": "user-home","options":{"gtk-no","gtk-yes"}})
     s.add_option("test2",s.ENTRY,{"label":"Test", "image": "gtk-no", "value":"test"})
+    s.add_option("test3",s.NUMBER,{"label":"Test", "image": "gtk-no", "min":0, "max": 10, "value":5})
     w.add(s.get())
     w.show()
     print(s.dump())
