@@ -1,8 +1,7 @@
 import gi
 gi.require_version("Gtk","3.0")
 from gi.repository import Gtk
-
-
+import json
 
 class settings_object(Gtk.Box):
     def __init__(self):
@@ -115,10 +114,10 @@ class object_selection(settings_object):
 
 class Settings:
     def __init__(self):
-        self.ONOFF=0
-        self.COMBO=1
-        self.ENTRY=2
-        self.NUMBER=3
+        self.ONOFF="onoff"
+        self.COMBO="combo"
+        self.ENTRY="entry"
+        self.NUMBER="number"
         self.widgets = {}
 
     def get(self):
@@ -128,7 +127,7 @@ class Settings:
         box.show()
         return box
 
-    def add_option(self, name="", type=-1, data=None):
+    def add_option(self, name="", type="", data=None):
         if type == self.ONOFF:
             obj = object_onoff()
         if type == self.COMBO:
@@ -146,13 +145,20 @@ class Settings:
             ret[w] = self.widgets[w].get_value()
         return ret
 
+    def set_data(self,name,data):
+        if name in self.widgets:
+            self.widgets[name].set_data(data)
+
+    def build(self,json_data):
+        for widget in json_data:
+            self.add_option(widget, json_data[widget]["type"],json_data[widget])
+            print(widget, json_data[widget])
+
 if __name__ == "__main__":
     w = Gtk.Window()
     s = Settings()
-    s.add_option("test",s.ONOFF,{"label":"Test","image":"gtk-ok"})
-    s.add_option("testf",s.COMBO,{"label":"Test", "image": "user-home","options":{"gtk-no","gtk-yes"}})
-    s.add_option("test2",s.ENTRY,{"label":"Test", "image": "gtk-no", "value":"test"})
-    s.add_option("test3",s.NUMBER,{"label":"Test", "image": "gtk-no", "min":0, "max": 10, "value":5})
+    data = open("ui.json","r").read()
+    s.build(json.loads(data))
     w.add(s.get())
     w.show()
     print(s.dump())
