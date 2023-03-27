@@ -25,6 +25,8 @@ class object_onoff(settings_object):
             self.label.set_text(data["label"])
         if "image" in data:
             self.image.set_from_icon_name(data["image"],0)
+        if "value" in data:
+            self.switch.set_state(data["value"].lower() == "true")
 
     def get_value(self):
         return self.switch.get_state()
@@ -91,6 +93,7 @@ class object_selection(settings_object):
         self.pack_start(Gtk.Label(),True, True, 3)
         self.pack_start(self.combo, False, False, 3)
         self.show_all()
+        self.__opts = None
 
     def set_data(self,data):
         if "label" in data:
@@ -98,11 +101,15 @@ class object_selection(settings_object):
         if "image" in data:
             self.image.set_from_icon_name(data["image"],0)
         if "options" in data:
-            print(data["options"])
+            self.__opts = data["options"]
             for opt in data["options"]:
                 print(opt)
                 self.combo.append_text(opt)
             self.combo.set_active(0)
+        if "value" in data:
+            if self.__opts:
+                i = self.__opts.index(data["value"])
+                self.combo.set_active(0)
 
     def get_value(self):
         tree_iter = self.combo.get_active_iter()
