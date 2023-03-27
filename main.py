@@ -1,3 +1,10 @@
-from widget import Settings
+import gi
+gi.require_version("Gtk","3.0")
+from gi.repository import Gtk
 
-settings = Settings()
+from MainWindow import MainWindow
+
+win = MainWindow()
+win.connect("destroy", Gtk.main_quit)
+win.show_all()
+Gtk.main()

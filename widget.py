@@ -119,6 +119,7 @@ class Settings:
         self.ENTRY="entry"
         self.NUMBER="number"
         self.widgets = {}
+        self.name = ""
 
     def get(self):
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -151,15 +152,8 @@ class Settings:
 
     def build(self,json_data):
         for widget in json_data:
+            if widget == "pardus":
+                continue
             self.add_option(widget, json_data[widget]["type"],json_data[widget])
             print(widget, json_data[widget])
 
-if __name__ == "__main__":
-    w = Gtk.Window()
-    s = Settings()
-    data = open("ui.json","r").read()
-    s.build(json.loads(data))
-    w.add(s.get())
-    w.show()
-    print(s.dump())
-    Gtk.main()

@@ -1,0 +1,28 @@
+{
+  "pardus": {
+      "title": "General",
+      "name": "pardus"
+  },
+  "scale": {
+    "type": "number",
+    "min" : "1",
+    "max": "3"
+  },
+  "gtk-theme": {
+    "type": "combo"
+  },
+  "dark-theme": {
+    "type": "onoff"
+  },
+  "blank-timeout": {
+    "type": "number",
+    "min": "60",
+    "max": "600"
+  },
+  "init": {
+      "type": "entry"
+  },
+  "prestart": {
+      "type": "entry"
+  }
+}
