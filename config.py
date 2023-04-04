@@ -1,4 +1,5 @@
 import configparser
+import os
 try:
     cfgs = ["/etc/pardus/greeter.conf"]
     if os.path.isdir("/etc/pardus/greeter.conf.d"):
@@ -16,9 +17,4 @@ def get(variable, default=None, section="pardus"):
     if variable not in config[section]:
         return default
     ret = config[section][variable]
-    if default == True or default == False:
-        if str(ret).lower() == "true":
-            return True
-        else:
-            return False
     return str(ret)

@@ -32,9 +32,28 @@ class MainWindow(Gtk.Window):
                self.add_page(self.settings[f].get(),jdata["pardus"]["title"])
                
         # main page
-        self.settings["main.json"].set_data("scale",{"label":_("Scale")})
-        self.settings["main.json"].set_data("gtk-theme",{"label":_("Gtk theme"),"options": os.listdir("/usr/share/themes"), "value": config.get("gtk-theme","Adwaita")})
-        self.settings["main.json"].set_data("dark-theme",{"label":_("Prefer dark theme")})
-        self.settings["main.json"].set_data("blank-timeout",{"label":_("Black screen before wait time")})
-        self.settings["main.json"].set_data("init",{"label":_("Initial command")})
-        self.settings["main.json"].set_data("prestart",{"label":_("Start command before login")})
+        self.settings["main.json"].set_data("scale",{
+            "label":_("Scale"),
+            "value": config.get("scale","1")
+        })
+        self.settings["main.json"].set_data("gtk-theme",{
+            "label":_("Gtk theme"),
+            "options": os.listdir("/usr/share/themes"),
+            "value": config.get("gtk-theme","Adwaita")
+        })
+        self.settings["main.json"].set_data("dark-theme",{
+            "label":_("Prefer dark theme"),
+            "value": config.get("dark-theme","true")
+        })
+        self.settings["main.json"].set_data("blank-timeout",{
+            "label":_("Black screen before wait time"),
+            "value": config.get("blank-timeout","300")
+        })
+        self.settings["main.json"].set_data("init",{
+            "label":_("Initial command"),
+            "value": config.get("init","")
+        })
+        self.settings["main.json"].set_data("prestart",{
+            "label":_("Start command before login"),
+             "value": config.get("prestart","")
+        })

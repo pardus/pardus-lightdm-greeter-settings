@@ -156,10 +156,6 @@ class Settings:
     def set_data(self,name,data):
         if name in self.widgets:
             self.widgets[name].set_data(data)
-            if "value" not in data:
-                default = config.get(name)
-                if default:
-                    self.widgets[name].set_data({"value": default})
 
     def build(self,json_data):
         for widget in json_data:
