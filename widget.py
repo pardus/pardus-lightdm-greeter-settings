@@ -2,6 +2,7 @@ import gi
 gi.require_version("Gtk","3.0")
 from gi.repository import Gtk
 import json
+import config
 
 class settings_object(Gtk.Box):
     def __init__(self):
@@ -103,13 +104,12 @@ class object_selection(settings_object):
         if "options" in data:
             self.__opts = data["options"]
             for opt in data["options"]:
-                print(opt)
                 self.combo.append_text(opt)
             self.combo.set_active(0)
         if "value" in data:
             if self.__opts:
                 i = self.__opts.index(data["value"])
-                self.combo.set_active(0)
+                self.combo.set_active(i)
 
     def get_value(self):
         tree_iter = self.combo.get_active_iter()
@@ -156,11 +156,14 @@ class Settings:
     def set_data(self,name,data):
         if name in self.widgets:
             self.widgets[name].set_data(data)
+            if "value" not in data:
+                default = config.get(name)
+                if default:
+                    self.widgets[name].set_data({"value": default})
 
     def build(self,json_data):
         for widget in json_data:
             if widget == "pardus":
                 continue
             self.add_option(widget, json_data[widget]["type"],json_data[widget])
-            print(widget, json_data[widget])
 

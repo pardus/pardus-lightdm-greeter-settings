@@ -27,14 +27,13 @@ class MainWindow(Gtk.Window):
            self.settings[f] = Settings()
            with open("data/"+f,"r") as fdata:
                jdata = json.loads(fdata.read())
-               print(jdata)
                self.settings[f].build(jdata)
                self.settings[f].name = jdata["pardus"]["name"]
                self.add_page(self.settings[f].get(),jdata["pardus"]["title"])
                
         # main page
         self.settings["main.json"].set_data("scale",{"label":_("Scale")})
-        self.settings["main.json"].set_data("gtk-theme",{"label":_("Gtk theme"),"options": os.listdir("/usr/share/themes")})
+        self.settings["main.json"].set_data("gtk-theme",{"label":_("Gtk theme"),"options": os.listdir("/usr/share/themes"), "value": config.get("gtk-theme","Adwaita")})
         self.settings["main.json"].set_data("dark-theme",{"label":_("Prefer dark theme")})
         self.settings["main.json"].set_data("blank-timeout",{"label":_("Black screen before wait time")})
         self.settings["main.json"].set_data("init",{"label":_("Initial command")})
