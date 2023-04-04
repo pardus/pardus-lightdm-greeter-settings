@@ -11,6 +11,11 @@
   "gtk-theme": {
     "type": "combo"
   },
+  "font-size": {
+    "type": "number",
+    "min": "8",
+    "max": "30"
+  },
   "dark-theme": {
     "type": "onoff"
   },

@@ -3,6 +3,7 @@ import gi, os
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from widget import *
+import util
 
 def _(v):
     return v
@@ -29,7 +30,7 @@ class MainWindow(Gtk.Window):
                jdata = json.loads(fdata.read())
                self.settings[f].build(jdata)
                self.settings[f].name = jdata["pardus"]["name"]
-               self.add_page(self.settings[f].get(),jdata["pardus"]["title"])
+               self.add_page(self.settings[f].get(),_(jdata["pardus"]["title"]))
                
         # main page
         self.settings["main.json"].set_data("scale",{
@@ -38,15 +39,19 @@ class MainWindow(Gtk.Window):
         })
         self.settings["main.json"].set_data("gtk-theme",{
             "label":_("Gtk theme"),
-            "options": os.listdir("/usr/share/themes"),
+            "options": util.list_gtk_themes(),
             "value": config.get("gtk-theme","Adwaita")
+        })
+        self.settings["main.json"].set_data("font-size",{
+            "label":_("Font Size"),
+            "value": config.get("font-size","10")
         })
         self.settings["main.json"].set_data("dark-theme",{
             "label":_("Prefer dark theme"),
             "value": config.get("dark-theme","true")
         })
         self.settings["main.json"].set_data("blank-timeout",{
-            "label":_("Black screen before wait time"),
+            "label":_("Black screen timeout (sec)"),
             "value": config.get("blank-timeout","300")
         })
         self.settings["main.json"].set_data("init",{

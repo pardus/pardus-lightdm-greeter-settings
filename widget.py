@@ -54,6 +54,7 @@ class object_entry(settings_object):
 
     def get_value(self):
         return self.entry.get_text()
+
 class object_number(settings_object):
     def __init__(self):
         super().__init__()
@@ -87,7 +88,7 @@ class object_selection(settings_object):
     def __init__(self):
         super().__init__()
         self.label = Gtk.Label()
-        self.combo = Gtk.ComboBoxText()
+        self.combo = Gtk.ComboBox()
         self.image = Gtk.Image()
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
@@ -95,6 +96,16 @@ class object_selection(settings_object):
         self.pack_start(self.combo, False, False, 3)
         self.show_all()
         self.__opts = None
+        cell_renderer = Gtk.CellRendererText()
+        self.combo.pack_start(cell_renderer,True)
+        self.combo.add_attribute(cell_renderer, "text", 0)
+        self.combo.connect("changed", self.on_combobox_changed)
+
+    def on_combobox_changed(self, combobox):
+        treeiter = combobox.get_active_iter()
+        model = combobox.get_model()
+
+        print("ComboBox selected item: %s" % (model[treeiter][1]))
 
     def set_data(self,data):
         if "label" in data:
@@ -103,13 +114,21 @@ class object_selection(settings_object):
             self.image.set_from_icon_name(data["image"],0)
         if "options" in data:
             self.__opts = data["options"]
+            store = Gtk.ListStore(str,str)
             for opt in data["options"]:
-                self.combo.append_text(opt)
-            self.combo.set_active(0)
+                if ":" in opt:
+                    store.append([opt.split(":")[0],opt.split(":")[1]])
+                else:
+                    store.append([opt, opt])
+            self.combo.set_model(store)
         if "value" in data:
             if self.__opts:
-                i = self.__opts.index(data["value"])
-                self.combo.set_active(i)
+                value = data["value"]
+                if ":" not in value:
+                    value = value+":"+value
+                if value in self.__opts:
+                    i = self.__opts.index(value)
+                    self.combo.set_active(i)
 
     def get_value(self):
         tree_iter = self.combo.get_active_iter()
