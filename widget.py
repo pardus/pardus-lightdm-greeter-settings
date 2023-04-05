@@ -152,13 +152,6 @@ class object_selection(settings_object):
         cell_renderer = Gtk.CellRendererText()
         self.combo.pack_start(cell_renderer,True)
         self.combo.add_attribute(cell_renderer, "text", 0)
-        self.combo.connect("changed", self.on_combobox_changed)
-
-    def on_combobox_changed(self, combobox):
-        treeiter = combobox.get_active_iter()
-        model = combobox.get_model()
-
-        print("ComboBox selected item: %s" % (model[treeiter][1]))
 
     def set_data(self,data):
         if "label" in data:
