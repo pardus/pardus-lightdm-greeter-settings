@@ -1,0 +1,3 @@
+debian/lightdm-pardus-greeter-settings
+*.pyc
+*.mo
