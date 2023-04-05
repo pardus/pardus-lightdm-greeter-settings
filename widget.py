@@ -72,6 +72,7 @@ class object_filepicker(settings_object):
         self.button.connect("clicked",self.select_file)
         self.button.set_label(_("Default"))
         self.default="default"
+        self.path = None
 
     def select_file(self,widget):
         dialog = Gtk.FileChooserDialog(
@@ -85,7 +86,6 @@ class object_filepicker(settings_object):
         )
 
         response = dialog.run()
-        self.path = None
         if response == Gtk.ResponseType.OK:
             self.path = dialog.get_filename()
         if self.path:
@@ -106,7 +106,10 @@ class object_filepicker(settings_object):
 
 
     def get_value(self):
-        return self.path
+        if self.path:
+            return self.path
+        else:
+            return self.default
 
 class object_number(settings_object):
     def __init__(self):

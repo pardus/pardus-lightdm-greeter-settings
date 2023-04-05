@@ -52,8 +52,14 @@ class MainWindow(Gtk.Window):
         self.notebook.append_page(page, Gtk.Label(label))
 
     def save_button_event(self,widget):
+        inidata = ""
         for s in self.settings:
-            print(self.settings[s].dump())
+            inidata += "[{}]\n".format(self.settings[s].name)
+            dump = self.settings[s].dump()
+            for key in dump:
+                inidata += "{}={}\n".format(key,dump[key])
+            inidata += "\n"
+        print(inidata)
 
 
     def init_pages(self):
