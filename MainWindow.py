@@ -14,13 +14,28 @@ class MainWindow(Gtk.Window):
 
         # Create Notebook
         self.notebook = Gtk.Notebook()
-        self.add(self.notebook)
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        box2 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        
+        self.save_button = Gtk.Button(label=_("Save"))
+        self.save_button.connect("clicked",self.save_button_event)
+        
+        box.pack_start(self.notebook,True, True,0)
+        box.pack_start(box2,False, False,0)
+        box2.pack_start(Gtk.Label("TUBİTAK ULAKBIM | 2023"),True, True,0)
+        box2.pack_start(self.save_button,False, False,0)
+        self.add(box)
+        
         self.settings = {}
         self.init_pages()
 
 
     def add_page(self,page, label=""):
         self.notebook.append_page(page, Gtk.Label(label))
+
+    def save_button_event(self,widget):
+        for s in self.settings:
+            print(self.settings[s].dump())
 
 
     def init_pages(self):
@@ -83,7 +98,7 @@ class MainWindow(Gtk.Window):
              "default": "user"
         })
         self.settings["gtkwindow.json"].set_data("allow-empty-password",{
-            "label":_("Allow emply password"),
+            "label":_("Allow empty password"),
              "value": config.get("allow-empty-password","true")
         })
         self.settings["gtkwindow.json"].set_data("allow-empty-password",{
