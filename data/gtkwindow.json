@@ -1,0 +1,21 @@
+{
+  "pardus": {
+      "title": "Gtk Window",
+      "name": "gtkwindow"
+  },
+  "background": {
+      "type": "filepicker"
+  },
+  "logo": {
+    "type": "filepicker"
+  },
+  "allow-empty-password": {
+    "type": "onoff"
+  },
+  "password-cache": {
+    "type": "onoff"
+  },
+  "username-cache": {
+    "type": "onoff"
+  }
+}

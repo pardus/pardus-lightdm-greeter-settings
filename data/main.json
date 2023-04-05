@@ -3,21 +3,21 @@
       "title": "General",
       "name": "pardus"
   },
+  "gtk-theme": {
+    "type": "combo"
+  },
+  "dark-theme": {
+    "type": "onoff"
+  },
   "scale": {
     "type": "number",
     "min" : "1",
     "max": "3"
   },
-  "gtk-theme": {
-    "type": "combo"
-  },
   "font-size": {
     "type": "number",
     "min": "8",
     "max": "30"
-  },
-  "dark-theme": {
-    "type": "onoff"
   },
   "blank-timeout": {
     "type": "number",

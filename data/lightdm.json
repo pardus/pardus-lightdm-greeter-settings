@@ -1,0 +1,15 @@
+{
+  "pardus": {
+      "title": "Lightdm",
+      "name": "lightdm"
+  },
+  "allow-root-login": {
+    "type": "onoff"
+  },
+  "allow-autologin": {
+    "type": "onoff"
+  },
+  "autologin-user": {
+    "type": "entry"
+  }
+}

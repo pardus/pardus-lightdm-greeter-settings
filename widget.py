@@ -1,8 +1,11 @@
-import gi
+import gi, os
 gi.require_version("Gtk","3.0")
 from gi.repository import Gtk
 import json
 import config
+
+def _(v):
+    return v
 
 class settings_object(Gtk.Box):
     def __init__(self):
@@ -54,6 +57,56 @@ class object_entry(settings_object):
 
     def get_value(self):
         return self.entry.get_text()
+
+class object_filepicker(settings_object):
+    def __init__(self):
+        super().__init__()
+        self.entry = Gtk.Entry()
+        self.label = Gtk.Label()
+        self.image = Gtk.Image()
+        self.button = Gtk.Button()
+        self.pack_start(self.image, False, False, 3)
+        self.pack_start(self.label, False, False, 3)
+        self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(self.button, False, False, 3)
+        self.button.connect("clicked",self.select_file)
+        self.button.set_label(_("Default"))
+        self.default="default"
+
+    def select_file(self,widget):
+        dialog = Gtk.FileChooserDialog(
+            title=self.label.get_text(), parent=None, action=Gtk.FileChooserAction.OPEN
+        )
+        dialog.add_buttons(
+            Gtk.STOCK_CANCEL,
+            Gtk.ResponseType.CANCEL,
+            Gtk.STOCK_OPEN,
+            Gtk.ResponseType.OK,
+        )
+
+        response = dialog.run()
+        self.path = None
+        if response == Gtk.ResponseType.OK:
+            self.path = dialog.get_filename()
+        if self.path:
+            self.button.set_label(os.path.basename(self.path))
+        else:
+            self.button.set_label(_("Default"))
+            self.path = self.default
+            
+        dialog.destroy()
+
+    def set_data(self, data):
+        if "label" in data:
+           self.label.set_text(data["label"])
+        if "image" in data:
+            self.image.set_from_icon_name(data["image"],0)
+        if "default" in data:
+            self.default = data["default"]
+
+
+    def get_value(self):
+        return self.path
 
 class object_number(settings_object):
     def __init__(self):
@@ -144,6 +197,7 @@ class Settings:
         self.COMBO="combo"
         self.ENTRY="entry"
         self.NUMBER="number"
+        self.FILEPICKER="filepicker"
         self.widgets = {}
         self.name = ""
 
@@ -163,6 +217,8 @@ class Settings:
             obj = object_entry()
         if type == self.NUMBER:
             obj = object_number()
+        if type == self.FILEPICKER:
+            obj = object_filepicker()
         self.widgets[name] = obj
         obj.set_data(data)
 

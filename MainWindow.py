@@ -32,7 +32,7 @@ class MainWindow(Gtk.Window):
                self.settings[f].name = jdata["pardus"]["name"]
                self.add_page(self.settings[f].get(),_(jdata["pardus"]["title"]))
                
-        # main page
+        # General
         self.settings["main.json"].set_data("scale",{
             "label":_("Scale"),
             "value": config.get("scale","1")
@@ -61,4 +61,45 @@ class MainWindow(Gtk.Window):
         self.settings["main.json"].set_data("prestart",{
             "label":_("Start command before login"),
              "value": config.get("prestart","")
+        })
+        # Lightdm
+        self.settings["lightdm.json"].set_data("allow-root-login",{
+            "label":_("Allow login as root"),
+             "value": config.get("allow-root-login","true")
+        })
+        self.settings["lightdm.json"].set_data("allow-autologin",{
+            "label":_("Allow autologin"),
+             "value": config.get("allow-autologin","true")
+        })
+        self.settings["lightdm.json"].set_data("autologin-user",{
+            "label":_("Autologin username"),
+             "value": config.get("autologin-user","")
+        })
+        
+        # Gtk Window
+        self.settings["gtkwindow.json"].set_data("background",{
+            "label":_("Background image"),
+             "value": config.get("background","user"),
+             "default": "user"
+        })
+        self.settings["gtkwindow.json"].set_data("allow-empty-password",{
+            "label":_("Allow emply password"),
+             "value": config.get("allow-empty-password","true")
+        })
+        self.settings["gtkwindow.json"].set_data("allow-empty-password",{
+            "label":_("Allow emply password"),
+             "value": config.get("allow-empty-password","true")
+        })
+        self.settings["gtkwindow.json"].set_data("password-cache",{
+            "label":_("Login without enter"),
+             "value": config.get("password-cache","true")
+        })
+        self.settings["gtkwindow.json"].set_data("username-cache",{
+            "label":_("Remember last username"),
+             "value": config.get("username-cache","true")
+        })
+        self.settings["gtkwindow.json"].set_data("logo",{
+            "label":_("Custom logo"),
+             "value": config.get("logo","true"),
+             "default": ""
         })
