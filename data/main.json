@@ -17,7 +17,7 @@
   "font-size": {
     "type": "number",
     "min": "8",
-    "max": "30"
+    "max": "96"
   },
   "blank-timeout": {
     "type": "number",

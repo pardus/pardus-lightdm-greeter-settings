@@ -11,3 +11,4 @@ self.settings["lightdm.json"].set_data("autologin-user",{
     "label":_("Autologin username"),
      "value": config.get("autologin-user","")
 })
+
