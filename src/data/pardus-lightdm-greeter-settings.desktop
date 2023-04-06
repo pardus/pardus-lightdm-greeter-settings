@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Pardus Lightdm Settings
+Name[tr]=Pardus Lightdm Ayarları
+GenericName=Lightdm Settings
+GenericName[tr]=Lightdm Ayarları
+Comment=Configure pardus lightdm greeter
+Comment[tr]=Pardus lightdm araşyüzünü ayarla
+Exec=pardus-lightdm-greeter-settings
+Icon=pardus-lightdm-greeter-settings
+Terminal=false
+Type=Application
+Categories=Settings;
+StartupNotify=true

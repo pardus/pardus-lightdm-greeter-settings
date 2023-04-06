@@ -5,6 +5,8 @@ from gi.repository import Gtk
 from widget import *
 import util
 
+APPDIR = os.path.dirname(os.path.abspath(__file__))
+
 def _(v):
     return v
 
@@ -63,18 +65,18 @@ class MainWindow(Gtk.Window):
 
 
     def init_pages(self):
-        for f in os.listdir("data"):
+        for f in os.listdir("{}/data/schemas/".format(APPDIR)):
            self.settings[f] = Settings()
-           with open("data/"+f,"r") as fdata:
+           with open("{}/data/schemas/{}".format(APPDIR, f),"r") as fdata:
                jdata = json.loads(fdata.read())
                self.settings[f].build(jdata)
                self.settings[f].name = jdata["pardus"]["name"]
                self.add_page(self.settings[f].get(),_(jdata["pardus"]["title"]))
 
-        for module in os.listdir("settings"):
-            if not os.path.isfile("settings/{}".format(module)) or not module.endswith(".py"):
+        for module in os.listdir(APPDIR+"/settings"):
+            if not os.path.isfile("{}/settings/{}".format(APPDIR, module)) or not module.endswith(".py"):
                 continue
-            with open("settings/{}".format(module),"r") as f:
+            with open("{}/settings/{}".format(APPDIR, module),"r") as f:
                 print("Loading: %s" % module)
                 exec(f.read())
 

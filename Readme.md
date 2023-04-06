@@ -1,0 +1,1 @@
+# Pardus lightdm greeter settings
