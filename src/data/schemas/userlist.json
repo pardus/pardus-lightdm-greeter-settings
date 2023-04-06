@@ -1,0 +1,18 @@
+{
+  "pardus": {
+      "title": "User List",
+      "name": "userlist"
+  },
+  "enabled": {
+    "type": "onoff"
+  },
+  "user-hide-button": {
+    "type": "onoff"
+  },
+  "show-realname": {
+    "type": "onoff"
+  },
+  "hidden-users": {
+    "type": "entry"
+  }
+}
