@@ -121,6 +121,8 @@ class object_number(settings_object):
         self.pack_start(self.label, False, False, 3)
         self.pack_start(Gtk.Label(),True, True, 3)
         self.pack_start(self.spinbutton, False, False, 3)
+        self.spinbutton.set_increments(1, 1)
+        self.spinbutton.set_digits(0)
         self.show_all()
 
     def set_data(self, data):
@@ -128,14 +130,15 @@ class object_number(settings_object):
            self.label.set_text(data["label"])
         if "image" in data:
             self.image.set_from_icon_name(data["image"],0)
+        digit = 0
+        if "digit" in data:
+           digit = float(data["digit"])
+           self.spinbutton.set_increments(1/10**digit, 1)
+           self.spinbutton.set_digits(digit)
         if "min" in data and "max" in data:
-           step = 1
-           if "step" in data:
-              step = int(data["step"])
-           self.spinbutton.set_increments(step, step)
-           self.spinbutton.set_range(int(data["min"]), int(data["max"]))
+           self.spinbutton.set_range(float(data["min"]), float(data["max"]))
         if "value" in data:
-            self.spinbutton.set_value(int(data["value"]))
+            self.spinbutton.set_value(float(data["value"]))
 
     def get_value(self):
         return self.spinbutton.get_value()

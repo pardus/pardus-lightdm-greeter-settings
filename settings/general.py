@@ -1,7 +1,8 @@
 # General
 self.settings["main.json"].set_data("scale",{
     "label":_("Scale"),
-    "value": config.get("scale","1")
+    "value": config.get("scale","1"),
+    "digit": "2"
 })
 self.settings["main.json"].set_data("gtk-theme",{
     "label":_("Gtk theme"),
@@ -10,7 +11,8 @@ self.settings["main.json"].set_data("gtk-theme",{
 })
 self.settings["main.json"].set_data("font-size",{
     "label":_("Font Size"),
-    "value": config.get("font-size","10")
+    "value": config.get("font-size","10"),
+    "digit": "0"
 })
 self.settings["main.json"].set_data("dark-theme",{
     "label":_("Prefer dark theme"),
