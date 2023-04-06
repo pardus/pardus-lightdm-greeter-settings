@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+
+<policyconfig>
+    <vendor>pardus</vendor>
+    <vendor_url>http://github.com/pardus/pardus-lightdm-greeter-settings</vendor_url>
+     <action id="tr.org.pardus.lightdm-greeter-setting.policy">
+      <description>Run pardus lightdm greeter settings as root</description>
+      <message>Authentication is required to run the pardus lightdm greeter settings as root</message>
+      <defaults>
+        <allow_any>auth_admin</allow_any>
+        <allow_inactive>auth_admin</allow_inactive>
+        <allow_active>auth_admin</allow_active>
+      </defaults>
+      <annotate key="org.freedesktop.policykit.exec.path">@APP@</annotate>
+      <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+    </action>
+</policyconfig>
