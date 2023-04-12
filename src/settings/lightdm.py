@@ -1,13 +1,13 @@
 # Lightdm
-self.settings["lightdm.json"].set_data("allow-root-login",{
+self.settings["lightdm"].set_data("allow-root-login",{
     "label":_("Allow login as root"),
      "value": config.get("allow-root-login","true")
 })
-self.settings["lightdm.json"].set_data("allow-autologin",{
+self.settings["lightdm"].set_data("allow-autologin",{
     "label":_("Allow autologin"),
      "value": config.get("allow-autologin","true")
 })
-self.settings["lightdm.json"].set_data("autologin-user",{
+self.settings["lightdm"].set_data("autologin-user",{
     "label":_("Autologin username"),
      "value": config.get("autologin-user","")
 })

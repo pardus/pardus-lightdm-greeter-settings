@@ -1,0 +1,14 @@
+{
+  "pardus": {
+      "title": "Display",
+      "name": "screen"
+  },
+  "mirror": {
+    "type": "onoff"
+  },
+  "default-monitor": {
+    "type": "number",
+    "min" : "1",
+    "max": "99"
+  }
+}

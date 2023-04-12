@@ -65,13 +65,16 @@ class MainWindow(Gtk.Window):
 
 
     def init_pages(self):
-        for f in os.listdir("{}/data/schemas/".format(APPDIR)):
-           self.settings[f] = Settings()
+        pages = os.listdir("{}/data/schemas/".format(APPDIR))
+        pages.sort()
+        for f in pages:
+           fname = f.split("-")[1].split(".")[0]
+           self.settings[fname] = Settings()
            with open("{}/data/schemas/{}".format(APPDIR, f),"r") as fdata:
                jdata = json.loads(fdata.read())
-               self.settings[f].build(jdata)
-               self.settings[f].name = jdata["pardus"]["name"]
-               self.add_page(self.settings[f].get(),_(jdata["pardus"]["title"]))
+               self.settings[fname].build(jdata)
+               self.settings[fname].name = jdata["pardus"]["name"]
+               self.add_page(self.settings[fname].get(),_(jdata["pardus"]["title"]))
 
         for module in os.listdir(APPDIR+"/settings"):
             if not os.path.isfile("{}/settings/{}".format(APPDIR, module)) or not module.endswith(".py"):
@@ -79,4 +82,3 @@ class MainWindow(Gtk.Window):
             with open("{}/settings/{}".format(APPDIR, module),"r") as f:
                 print("Loading: %s" % module)
                 exec(f.read())
-

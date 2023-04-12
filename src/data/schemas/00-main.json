@@ -6,6 +6,9 @@
   "gtk-theme": {
     "type": "combo"
   },
+  "gtk-icon-theme-name": {
+    "type": "combo"
+  },
   "dark-theme": {
     "type": "onoff"
   },
