@@ -61,7 +61,9 @@ class MainWindow(Gtk.Window):
             for key in dump:
                 inidata += "{}={}\n".format(key,dump[key])
             inidata += "\n"
-        print(inidata)
+        with open("/etc/pardus/greeter.conf.d/00-greeter-settings.conf","w") as f:
+            f.write(inidata)
+        Gtk.main_quit()
 
 
     def init_pages(self):
