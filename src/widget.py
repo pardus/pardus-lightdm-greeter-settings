@@ -103,6 +103,11 @@ class object_filepicker(settings_object):
             self.image.set_from_icon_name(data["image"],0)
         if "default" in data:
             self.default = data["default"]
+        if "value" in data:
+            self.path = data["value"]
+            self.default = data["value"]
+            if self.default != "":
+                self.button.set_label(os.path.basename(self.default))
 
 
     def get_value(self):

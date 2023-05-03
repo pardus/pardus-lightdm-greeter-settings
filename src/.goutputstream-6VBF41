@@ -9,10 +9,8 @@ try:
     config = configparser.RawConfigParser()
     config.read(cfgs)
 except:
-    print("Failed to read config. Using defaults")
+    print("Failed to read config. Using defaults.")
     config = []
-
-print({section: dict(config[section]) for section in config.sections()})
 
 def get(variable, default=None, section="pardus"):
     if section not in config:
