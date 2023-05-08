@@ -1,0 +1,15 @@
+Source: pardus-lightdm-greeter-settings
+Section: misc
+Priority: optional
+Maintainer: Ali Riza KESKIN <aliriza.keskin@pardus.org.tr>
+Build-Depends: debhelper (>= 10), make
+Standards-Version: 4.3.0
+Homepage: https://www.pardus.org.tr
+
+Package: pardus-lightdm-greeter
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         pardus-lightdm-greeter
+Description: Pardus Greeter Settings
+ Pardus greeter settings for lightdm login screen
