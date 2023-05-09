@@ -2,9 +2,9 @@
 _("Display")
 self.settings["monitor"].set_data("mirror",{
     "label":_("Mirror monitors"),
-    "value": config.get("mirror","true", "monitor"),
+    "value": config.get("mirror","true", "screen"),
 })
 self.settings["monitor"].set_data("default-monitor",{
     "label":_("Default monitor"),
-    "value": config.get("default-monitor","1", "monitor"),
+    "value": config.get("default-monitor","1", "screen"),
 })

@@ -129,24 +129,28 @@ class object_number(settings_object):
         self.spinbutton.set_increments(1, 1)
         self.spinbutton.set_digits(0)
         self.show_all()
+        self._digit = 0
 
     def set_data(self, data):
         if "label" in data:
            self.label.set_text(data["label"])
         if "image" in data:
             self.image.set_from_icon_name(data["image"],0)
-        digit = 0
+        self._digit = 0
         if "digit" in data:
-           digit = float(data["digit"])
-           self.spinbutton.set_increments(1/10**digit, 1)
-           self.spinbutton.set_digits(digit)
+           self._digit = float(data["digit"])
+           self.spinbutton.set_increments(1/10**self._digit, 1)
+           self.spinbutton.set_digits(self._digit)
         if "min" in data and "max" in data:
            self.spinbutton.set_range(float(data["min"]), float(data["max"]))
         if "value" in data:
             self.spinbutton.set_value(float(data["value"]))
 
     def get_value(self):
-        return self.spinbutton.get_value()
+        if self._digit == 0:
+            return int(self.spinbutton.get_value())
+        else:
+            return self.spinbutton.get_value()
 
 class object_selection(settings_object):
     def __init__(self):
