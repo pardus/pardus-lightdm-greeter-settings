@@ -1,25 +1,25 @@
 PREFIX=/usr
 APPNAME=pardus-lightdm-greeter-settings
-APPDIR=$(DESTDIR)$(PREFIX)/share/pardus/$(APPNAME)
+APPDIR=$(PREFIX)/share/pardus/$(APPNAME)
 build:
 	: no nothing
 install:
 	# create directory
-	mkdir -p $(APPDIR)
+	mkdir -p $(DESTDIR)$(APPDIR)
 	mkdir -p $(DESTDIR)/$(PREFIX)/bin
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/applications
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/applications
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/polkit-1/actions/
 	# copy source code
-	cp -prfv src/* $(APPDIR)
-	chmod 755 -R $(APPDIR)
+	cp -prfv src/* $(DESTDIR)$(APPDIR)
+	chmod 755 -R $(DESTDIR)$(APPDIR)
 	# generate application launch command
-	echo "#!/bin/sh" > $(APPDIR)/$(APPNAME).sh
+	echo "#!/bin/sh" > $(DESTDIR)$(APPDIR)/$(APPNAME).sh
 	echo "exec pkexec $(PREFIX)/share/pardus/$(APPNAME)/main.py" \
-	    >> $(APPDIR)/$(APPNAME).sh
+	    >> $(DESTDIR)$(APPDIR)/$(APPNAME).sh
 	# make executable
-	chmod 755 $(APPDIR)/$(APPNAME).sh
+	chmod 755 $(DESTDIR)$(APPDIR)/$(APPNAME).sh
 	# symlink files
 	ln -s ../share/pardus/$(APPNAME)/$(APPNAME).sh \
 	    $(DESTDIR)/$(PREFIX)/bin/$(APPNAME) || true
