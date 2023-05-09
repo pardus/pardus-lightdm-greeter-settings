@@ -1,4 +1,5 @@
 # Lightdm
+_("Lightdm")
 self.settings["lightdm"].set_data("allow-root-login",{
     "label":_("Allow login as root"),
      "value": config.get("allow-root-login","true", "lightdm")

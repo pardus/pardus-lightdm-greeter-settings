@@ -7,12 +7,23 @@ import util
 
 APPDIR = os.path.dirname(os.path.abspath(__file__))
 
-def _(v):
-    return v
+try:
+    import locale
+    from locale import gettext as _
+
+    # Translation Constants:
+    APPNAME = "pardus-lightdm-greeter-settings"
+    TRANSLATIONS_PATH = "/usr/share/locale"
+    locale.bindtextdomain(APPNAME, TRANSLATIONS_PATH)
+    locale.textdomain(APPNAME)
+except:
+    # locale load issue fix
+    def _(msg):
+        return msg
 
 class MainWindow(Gtk.Window):
     def __init__(self):
-        Gtk.Window.__init__(self, title ="Lightdm Pardus Greeter Settings")
+        Gtk.Window.__init__(self, title =_("Lightdm Pardus Greeter Settings"))
 
         # Create Notebook
         self.notebook = Gtk.Notebook()

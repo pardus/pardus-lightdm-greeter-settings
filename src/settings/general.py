@@ -1,4 +1,5 @@
 # General
+_("General")
 self.settings["main"].set_data("scale",{
     "label":_("Scale"),
     "value": config.get("scale","1"),

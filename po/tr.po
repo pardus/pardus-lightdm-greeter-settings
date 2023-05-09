@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-09 10:51+0300\n"
+"PO-Revision-Date: 2023-05-09 10:52+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: src/MainWindow.py:26
+msgid "Lightdm Pardus Greeter Settings"
+msgstr "Lightdm Pardus Greeter Ayarları"
+
+#: src/MainWindow.py:38
+msgid "Save"
+msgstr "Kaydet"
+
+#: src/MainWindow.py:41
+msgid "Cancel"
+msgstr "İptal"
+
+#: src/widget.py:73 src/widget.py:94
+msgid "Default"
+msgstr "Varsayılan"
+
+#: src/settings/general.py:2
+msgid "General"
+msgstr "Genel"
+
+#: src/settings/general.py:4
+msgid "Scale"
+msgstr "Ölçekleme"
+
+#: src/settings/general.py:9
+msgid "Gtk theme"
+msgstr "Gtk teması"
+
+#: src/settings/general.py:15
+msgid "Icon theme"
+msgstr "Simge teması"
+
+#: src/settings/general.py:21
+msgid "Font Size"
+msgstr "Yazıtipi Boyutu"
+
+#: src/settings/general.py:26
+msgid "Prefer dark theme"
+msgstr "Koyu tema"
+
+#: src/settings/general.py:30
+msgid "Black screen timeout (sec)"
+msgstr "Siyah ekran gecikmesi (sn)"
+
+#: src/settings/general.py:34
+msgid "Initial command"
+msgstr "Başlangıç komutu"
+
+#: src/settings/general.py:38
+msgid "Start command before login"
+msgstr "Girişten önce komutu çalıştır"
+
+#: src/settings/gtkwindow.py:2
+msgid "Gtk Window"
+msgstr "Gtk Penceresi"
+
+#: src/settings/gtkwindow.py:4
+msgid "Background image"
+msgstr "Arkaplan resmi"
+
+#: src/settings/gtkwindow.py:9
+msgid "Allow empty password"
+msgstr "Boş parola kabul et"
+
+#: src/settings/gtkwindow.py:13
+msgid "Login without enter"
+msgstr "Enter olmadan giriş"
+
+#: src/settings/gtkwindow.py:17
+msgid "Remember last username"
+msgstr "Son kullanıcı adını hatırla"
+
+#: src/settings/gtkwindow.py:21
+msgid "Custom logo"
+msgstr "Özel logo"
+
+#: src/settings/userlist.py:2
+msgid "User List"
+msgstr "Kullanıcı Listesi"
+
+#: src/settings/userlist.py:4
+msgid "Enable username list"
+msgstr "Kullanıcı adı listesini etkinleştir"
+
+#: src/settings/userlist.py:8
+msgid "Show real names"
+msgstr "Gerçek isimleri göster"
+
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
+msgstr "Kullanıcı gizleme tuşlarını etkinleştir"
+
+#: src/settings/userlist.py:16
+msgid "Hidden users list"
+msgstr "Gizli kullanıcılar listesi"
+
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr "Lightdm"
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr "Root ile girişi kabul et"
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr "Otomatik girişi kabul et"
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
+msgstr "Otomatik giriş kullanıcı adı"
+
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr "Ekran"
+
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr "Ekranları yansıla"
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
+msgstr "Varsayılan ekran"

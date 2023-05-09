@@ -1,4 +1,5 @@
 # Gtk Window
+_("Gtk Window")
 self.settings["gtkwindow"].set_data("background",{
     "label":_("Background image"),
      "value": config.get("background","user","gtkwindow"),
@@ -6,10 +7,6 @@ self.settings["gtkwindow"].set_data("background",{
 })
 self.settings["gtkwindow"].set_data("allow-empty-password",{
     "label":_("Allow empty password"),
-     "value": config.get("allow-empty-password","true","gtkwindow")
-})
-self.settings["gtkwindow"].set_data("allow-empty-password",{
-    "label":_("Allow emply password"),
      "value": config.get("allow-empty-password","true","gtkwindow")
 })
 self.settings["gtkwindow"].set_data("password-cache",{

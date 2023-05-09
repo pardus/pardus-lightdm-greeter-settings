@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-09 10:51+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/MainWindow.py:26
+msgid "Lightdm Pardus Greeter Settings"
+msgstr ""
+
+#: src/MainWindow.py:38
+msgid "Save"
+msgstr ""
+
+#: src/MainWindow.py:41
+msgid "Cancel"
+msgstr ""
+
+#: src/widget.py:73 src/widget.py:94
+msgid "Default"
+msgstr ""
+
+#: src/settings/general.py:2
+msgid "General"
+msgstr ""
+
+#: src/settings/general.py:4
+msgid "Scale"
+msgstr ""
+
+#: src/settings/general.py:9
+msgid "Gtk theme"
+msgstr ""
+
+#: src/settings/general.py:15
+msgid "Icon theme"
+msgstr ""
+
+#: src/settings/general.py:21
+msgid "Font Size"
+msgstr ""
+
+#: src/settings/general.py:26
+msgid "Prefer dark theme"
+msgstr ""
+
+#: src/settings/general.py:30
+msgid "Black screen timeout (sec)"
+msgstr ""
+
+#: src/settings/general.py:34
+msgid "Initial command"
+msgstr ""
+
+#: src/settings/general.py:38
+msgid "Start command before login"
+msgstr ""
+
+#: src/settings/gtkwindow.py:2
+msgid "Gtk Window"
+msgstr ""
+
+#: src/settings/gtkwindow.py:4
+msgid "Background image"
+msgstr ""
+
+#: src/settings/gtkwindow.py:9
+msgid "Allow empty password"
+msgstr ""
+
+#: src/settings/gtkwindow.py:13
+msgid "Login without enter"
+msgstr ""
+
+#: src/settings/gtkwindow.py:17
+msgid "Remember last username"
+msgstr ""
+
+#: src/settings/gtkwindow.py:21
+msgid "Custom logo"
+msgstr ""
+
+#: src/settings/userlist.py:2
+msgid "User List"
+msgstr ""
+
+#: src/settings/userlist.py:4
+msgid "Enable username list"
+msgstr ""
+
+#: src/settings/userlist.py:8
+msgid "Show real names"
+msgstr ""
+
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
+msgstr ""
+
+#: src/settings/userlist.py:16
+msgid "Hidden users list"
+msgstr ""
+
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr ""
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr ""
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr ""
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
+msgstr ""
+
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr ""
+
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr ""
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
+msgstr ""

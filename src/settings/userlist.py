@@ -1,4 +1,5 @@
 # Lightdm
+_("User List")
 self.settings["userlist"].set_data("enabled",{
     "label":_("Enable username list"),
      "value": config.get("enabled","true", "userlist")
