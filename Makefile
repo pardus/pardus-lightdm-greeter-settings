@@ -1,6 +1,6 @@
 PREFIX=/usr
 APPNAME=pardus-lightdm-greeter-settings
-APPDIR=$(shell realpath $(DESTDIR)$(PREFIX)/share/pardus/$(APPNAME))
+APPDIR=$(DESTDIR)$(PREFIX)/share/pardus/$(APPNAME)
 build:
 	: no nothing
 install:

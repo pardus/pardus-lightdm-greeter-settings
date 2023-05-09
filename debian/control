@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 10), make
 Standards-Version: 4.3.0
 Homepage: https://www.pardus.org.tr
 
-Package: pardus-lightdm-greeter
+Package: pardus-lightdm-greeter-settings
 Architecture: all
 Depends: ${misc:Depends},
          ${python3:Depends},
