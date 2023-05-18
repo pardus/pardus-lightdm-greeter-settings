@@ -78,6 +78,7 @@ class object_filepicker(settings_object):
         self.path = None
         self.reset.set_image(Gtk.Image.new_from_icon_name("edit-clear-symbolic",0))
         self.reset.set_relief(Gtk.ReliefStyle.NONE)
+        self.reset.connect("clicked",self.reset_value)
 
     def select_file(self,widget):
         dialog = Gtk.FileChooserDialog(
@@ -91,9 +92,10 @@ class object_filepicker(settings_object):
         )
 
         response = dialog.run()
+        self.path = self.default
         if response == Gtk.ResponseType.OK:
             self.path = dialog.get_filename()
-        if self.path:
+        if self.path != self.default:
             self.button.set_label(os.path.basename(self.path))
         else:
             self.button.set_label(_("Default"))
@@ -110,10 +112,14 @@ class object_filepicker(settings_object):
             self.default = data["default"]
         if "value" in data:
             self.path = data["value"]
-            self.default = data["value"]
-            if self.default != "":
+            if self.default != self.path:
                 self.button.set_label(os.path.basename(self.default))
+            else:
+                self.button.set_label(_("Default"))
 
+    def reset_value(self,widget=None):
+        self.button.set_label(_("Default"))
+        self.path = self.default
 
     def get_value(self):
         if self.path:
