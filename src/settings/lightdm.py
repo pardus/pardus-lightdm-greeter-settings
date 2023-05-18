@@ -10,6 +10,6 @@ self.settings["lightdm"].set_data("allow-autologin",{
 })
 self.settings["lightdm"].set_data("autologin-user",{
     "label":_("Autologin username"),
-     "value": config.get("autologin-user","", "lightdm")
-})
+     "value": config.get("autologin-user","", "Seat:*")
+},hidden=True)
 

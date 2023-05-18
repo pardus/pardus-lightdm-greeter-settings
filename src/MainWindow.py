@@ -74,6 +74,17 @@ class MainWindow(Gtk.Window):
             inidata += "\n"
         with open("/etc/pardus/greeter.conf.d/00-greeter-settings.conf","w") as f:
             f.write(inidata)
+        if "lightdm" in self.settings:
+            autologin_file = "/usr/share/lightdm/lightdm.conf.d/99-pardus-lightdm-greeter-autologin.conf"
+            autologin_user = self.settings["lightdm"].get_value("autologin-user")
+            if not (autologin_user == "" or autologin_user == None):
+                data = "[Seat:*]\n"
+                data += "autologin-user={}\n".format(autologin_user)
+                with open(autologin_file,"w") as f:
+                    f.write(data)
+            else:
+                if os.path.isfile(autologin_file):
+                    os.unlink(autologin_file)
         Gtk.main_quit()
 
 

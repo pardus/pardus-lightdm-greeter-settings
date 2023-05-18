@@ -19,6 +19,6 @@ self.settings["gtkwindow"].set_data("username-cache",{
 })
 self.settings["gtkwindow"].set_data("logo",{
     "label":_("Custom logo"),
-     "value": config.get("logo","true","gtkwindow"),
+     "value": config.get("logo","","gtkwindow"),
      "default": ""
 })

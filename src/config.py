@@ -1,10 +1,11 @@
 import configparser
 import os
 try:
-    cfgs = ["/etc/pardus/greeter.conf"]
-    if os.path.isdir("/etc/pardus/greeter.conf.d"):
-        for cdir in os.listdir("/etc/pardus/greeter.conf.d/"):
-            cfgs.append("/etc/pardus/greeter.conf.d/"+cdir)
+    cfgs = ["/etc/pardus/greeter.conf","/etc/lightdm/lightdm.conf"]
+    for fdir in ["/usr/share/lightdm/lightdm.conf.d/","/etc/pardus/greeter.conf.d"]:
+        if os.path.isdir(fdir):
+            for cdir in os.listdir(fdir):
+                cfgs.append(fdir+cdir)
 
     config = configparser.RawConfigParser()
     config.read(cfgs)

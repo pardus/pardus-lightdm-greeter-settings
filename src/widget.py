@@ -10,6 +10,7 @@ def _(v):
 class settings_object(Gtk.Box):
     def __init__(self):
         super().__init__()
+        self.hidden = False
 
 
 class object_onoff(settings_object):
@@ -65,14 +66,18 @@ class object_filepicker(settings_object):
         self.label = Gtk.Label()
         self.image = Gtk.Image()
         self.button = Gtk.Button()
+        self.reset = Gtk.Button()
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
         self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(self.reset, False, False, 3)
         self.pack_start(self.button, False, False, 3)
         self.button.connect("clicked",self.select_file)
         self.button.set_label(_("Default"))
         self.default="default"
         self.path = None
+        self.reset.set_image(Gtk.Image.new_from_icon_name("edit-clear-symbolic",0))
+        self.reset.set_relief(Gtk.ReliefStyle.NONE)
 
     def select_file(self,widget):
         dialog = Gtk.FileChooserDialog(
@@ -233,12 +238,20 @@ class Settings:
     def dump(self):
         ret = {}
         for w in self.widgets:
-            ret[w] = self.widgets[w].get_value()
+            if not self.widgets[w].hidden:
+                ret[w] = self.widgets[w].get_value()
         return ret
 
-    def set_data(self,name,data):
+    def get_value(self,name):
+        if name in self.widgets:
+            return self.widgets[name].get_value()
+        return None
+
+
+    def set_data(self,name,data,hidden=False):
         if name in self.widgets:
             self.widgets[name].set_data(data)
+            self.widgets[name].hidden = hidden
 
     def build(self,json_data):
         for widget in json_data:
