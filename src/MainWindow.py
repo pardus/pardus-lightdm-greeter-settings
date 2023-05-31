@@ -55,9 +55,9 @@ class MainWindow(Gtk.Window):
 
         # button box
         box3.pack_start(Gtk.Label(),True, True,3)
-        box3.pack_start(self.cancel_button,False, False,3)
         box3.pack_start(self.apply_button,False, False,3)
         box3.pack_start(self.save_button,False, False,3)
+        box3.pack_start(self.cancel_button,False, False,3)
 
         
         self.settings = {}

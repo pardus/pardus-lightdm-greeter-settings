@@ -7,7 +7,7 @@ install: installmo
 	# create directory
 	mkdir -p $(DESTDIR)$(APPDIR)
 	mkdir -p $(DESTDIR)/$(PREFIX)/bin
-	mkdir -p $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable
+	mkdir -p $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/applications
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/applications
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/polkit-1/actions/
@@ -23,8 +23,8 @@ install: installmo
 	# symlink files
 	ln -s ../share/pardus/$(APPNAME)/$(APPNAME).sh \
 	    $(DESTDIR)/$(PREFIX)/bin/$(APPNAME) || true
-	ln -s ../../../pardus/$(APPNAME)/data/icon.svg \
-	    $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/$(APPNAME).svg || true
+	ln -s ../../../../pardus/$(APPNAME)/data/icon.svg \
+	    $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps/$(APPNAME).svg || true
 	ln -s ../pardus/$(APPNAME)/data/$(APPNAME).desktop \
 	    $(DESTDIR)/$(PREFIX)/share/applications/$(APPNAME).desktop || true
 	# install polkit policy
