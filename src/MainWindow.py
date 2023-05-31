@@ -4,6 +4,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from widget import *
 import util
+import shutil
 
 APPDIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -74,6 +75,14 @@ class MainWindow(Gtk.Window):
 
     def apply_button_event(self, widget=None):
         inidata = ""
+        if "gtkwindow" in self.settings:
+            if "background" in self.settings["gtkwindow"].widgets:
+                background = self.settings["gtkwindow"].widgets["background"]
+                background = background.get_value()
+                if os.path.isfile(background) and background.startswith("/home"):
+                    shutil.copyfile(background, "/var/lib/lightdm/wallpaper")
+                    os.chmod("/var/lib/lightdm/wallpaper", 0o755)
+                    self.settings["gtkwindow"].widgets["background"].path = "/var/lib/lightdm/wallpaper"
         for s in self.settings:
             inidata += "[{}]\n".format(self.settings[s].name)
             dump = self.settings[s].dump()

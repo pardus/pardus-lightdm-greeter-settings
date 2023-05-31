@@ -10,6 +10,7 @@ Package: pardus-lightdm-greeter-settings
 Architecture: all
 Depends: ${misc:Depends},
          ${python3:Depends},
-         pardus-lightdm-greeter
+         pardus-lightdm-greeter,
+         dbus-x11
 Description: Pardus Greeter Settings
  Pardus greeter settings for lightdm login screen
