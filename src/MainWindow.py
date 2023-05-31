@@ -35,6 +35,9 @@ class MainWindow(Gtk.Window):
         self.add(box)
         scrolled_window.add(self.notebook)
         
+        self.apply_button = Gtk.Button(label=_("Apply"))
+        self.apply_button.connect("clicked",self.apply_button_event)
+
         self.save_button = Gtk.Button(label=_("Save"))
         self.save_button.connect("clicked",self.save_button_event)
 
@@ -53,6 +56,7 @@ class MainWindow(Gtk.Window):
         # button box
         box3.pack_start(Gtk.Label(),True, True,3)
         box3.pack_start(self.cancel_button,False, False,3)
+        box3.pack_start(self.apply_button,False, False,3)
         box3.pack_start(self.save_button,False, False,3)
 
         
@@ -65,6 +69,10 @@ class MainWindow(Gtk.Window):
         self.notebook.append_page(page, Gtk.Label(label))
 
     def save_button_event(self,widget):
+        self.apply_button_event()
+        Gtk.main_quit()
+
+    def apply_button_event(self, widget=None):
         inidata = ""
         for s in self.settings:
             inidata += "[{}]\n".format(self.settings[s].name)
@@ -85,7 +93,6 @@ class MainWindow(Gtk.Window):
             else:
                 if os.path.isfile(autologin_file):
                     os.unlink(autologin_file)
-        Gtk.main_quit()
 
 
     def init_pages(self):
