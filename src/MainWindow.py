@@ -80,6 +80,8 @@ class MainWindow(Gtk.Window):
                 background = self.settings["gtkwindow"].widgets["background"]
                 background = background.get_value()
                 if os.path.isfile(background) and background.startswith("/home"):
+                    if os.path.isfile("/var/lib/lightdm/wallpaper"):
+                        os.unlink("/var/lib/lightdm/wallpaper")
                     shutil.copyfile(background, "/var/lib/lightdm/wallpaper")
                     os.chmod("/var/lib/lightdm/wallpaper", 0o755)
                     self.settings["gtkwindow"].widgets["background"].path = "/var/lib/lightdm/wallpaper"
