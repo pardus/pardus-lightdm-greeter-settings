@@ -70,8 +70,8 @@ class object_filepicker(settings_object):
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
         self.pack_start(Gtk.Label(),True, True, 3)
-        self.pack_start(self.reset, False, False, 3)
         self.pack_start(self.button, False, False, 3)
+        self.pack_start(self.reset, False, False, 3)
         self.button.connect("clicked",self.select_file)
         self.button.set_label(_("Default"))
         self.default="default"
@@ -92,15 +92,12 @@ class object_filepicker(settings_object):
         )
 
         response = dialog.run()
-        self.path = self.default
+        data = {}        
+        data["value"] = self.default
         if response == Gtk.ResponseType.OK:
-            self.path = dialog.get_filename()
-        if self.path != self.default:
-            self.button.set_label(os.path.basename(self.path))
-        else:
-            self.button.set_label(_("Default"))
-            self.path = self.default
-            
+             data["value"] = dialog.get_filename()
+        
+        self.set_data(data)
         dialog.destroy()
 
     def set_data(self, data):
@@ -113,13 +110,16 @@ class object_filepicker(settings_object):
         if "value" in data:
             self.path = data["value"]
             if self.default != self.path:
-                self.button.set_label(os.path.basename(self.default))
+                self.button.set_label(os.path.basename(self.path))
             else:
                 self.button.set_label(_("Default"))
+        print(self.path, self.default)
 
     def reset_value(self,widget=None):
         self.button.set_label(_("Default"))
-        self.path = self.default
+        data = {}        
+        data["value"] = self.default
+        self.set_data(data)
 
     def get_value(self):
         if self.path:
