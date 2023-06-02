@@ -1,10 +1,11 @@
-import gi, os
+import shutil
+import util
+from widget import *
+import gi
+import os
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
-from widget import *
-import util
-import shutil
 
 APPDIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -22,9 +23,10 @@ except:
     def _(msg):
         return msg
 
+
 class MainWindow(Gtk.Window):
     def __init__(self):
-        Gtk.Window.__init__(self, title =_("Lightdm Pardus Greeter Settings"))
+        Gtk.Window.__init__(self, title=_("Lightdm Pardus Greeter Settings"))
 
         # Create Notebook
         self.notebook = Gtk.Notebook()
@@ -35,41 +37,39 @@ class MainWindow(Gtk.Window):
 
         self.add(box)
         scrolled_window.add(self.notebook)
-        
+
         self.apply_button = Gtk.Button(label=_("Apply"))
-        self.apply_button.connect("clicked",self.apply_button_event)
+        self.apply_button.connect("clicked", self.apply_button_event)
 
         self.save_button = Gtk.Button(label=_("Save"))
-        self.save_button.connect("clicked",self.save_button_event)
+        self.save_button.connect("clicked", self.save_button_event)
 
         self.cancel_button = Gtk.Button(label=_("Cancel"))
-        self.cancel_button.connect("clicked",Gtk.main_quit)
-        
+        self.cancel_button.connect("clicked", Gtk.main_quit)
+
         # main box
-        box.pack_start(scrolled_window,True, True,0)
-        box.pack_start(box2,False, False,3)
+        box.pack_start(scrolled_window, True, True, 0)
+        box.pack_start(box2, False, False, 3)
 
         # bottom box
-        box2.pack_start(Gtk.Label("TUBİTAK ULAKBIM | 2023"),False, False,13)
-        box2.pack_start(Gtk.Label(),True, True,0)
-        box2.pack_start(box3,False, False,0)
+        box2.pack_start(Gtk.Label("TUBİTAK ULAKBIM | 2023"), False, False, 13)
+        box2.pack_start(Gtk.Label(), True, True, 0)
+        box2.pack_start(box3, False, False, 0)
 
         # button box
-        box3.pack_start(Gtk.Label(),True, True,3)
-        box3.pack_start(self.apply_button,False, False,3)
-        box3.pack_start(self.save_button,False, False,3)
-        box3.pack_start(self.cancel_button,False, False,3)
+        box3.pack_start(Gtk.Label(), True, True, 3)
+        box3.pack_start(self.apply_button, False, False, 3)
+        box3.pack_start(self.save_button, False, False, 3)
+        box3.pack_start(self.cancel_button, False, False, 3)
 
-        
         self.settings = {}
         self.init_pages()
-        self.set_size_request(600,600)
+        self.set_size_request(600, 600)
 
-
-    def add_page(self,page, label=""):
+    def add_page(self, page, label=""):
         self.notebook.append_page(page, Gtk.Label(label))
 
-    def save_button_event(self,widget):
+    def save_button_event(self, widget):
         self.apply_button_event()
         Gtk.main_quit()
 
@@ -89,38 +89,39 @@ class MainWindow(Gtk.Window):
             inidata += "[{}]\n".format(self.settings[s].name)
             dump = self.settings[s].dump()
             for key in dump:
-                inidata += "{}={}\n".format(key,dump[key])
+                inidata += "{}={}\n".format(key, dump[key])
             inidata += "\n"
-        with open("/etc/pardus/greeter.conf.d/00-greeter-settings.conf","w") as f:
+        with open("/etc/pardus/greeter.conf.d/00-greeter-settings.conf", "w") as f:
             f.write(inidata)
         if "lightdm" in self.settings:
             autologin_file = "/usr/share/lightdm/lightdm.conf.d/99-pardus-lightdm-greeter-autologin.conf"
-            autologin_user = self.settings["lightdm"].get_value("autologin-user")
+            autologin_user = self.settings["lightdm"].get_value(
+                "autologin-user")
             if not (autologin_user == "" or autologin_user == None):
                 data = "[Seat:*]\n"
                 data += "autologin-user={}\n".format(autologin_user)
-                with open(autologin_file,"w") as f:
+                with open(autologin_file, "w") as f:
                     f.write(data)
             else:
                 if os.path.isfile(autologin_file):
                     os.unlink(autologin_file)
 
-
     def init_pages(self):
         pages = os.listdir("{}/data/schemas/".format(APPDIR))
         pages.sort()
         for f in pages:
-           fname = f.split("-")[1].split(".")[0]
-           self.settings[fname] = Settings()
-           with open("{}/data/schemas/{}".format(APPDIR, f),"r") as fdata:
-               jdata = json.loads(fdata.read())
-               self.settings[fname].build(jdata)
-               self.settings[fname].name = jdata["pardus"]["name"]
-               self.add_page(self.settings[fname].get(),_(jdata["pardus"]["title"]))
+            fname = f.split("-")[1].split(".")[0]
+            self.settings[fname] = Settings()
+            with open("{}/data/schemas/{}".format(APPDIR, f), "r") as fdata:
+                jdata = json.loads(fdata.read())
+                self.settings[fname].build(jdata)
+                self.settings[fname].name = jdata["pardus"]["name"]
+                self.add_page(self.settings[fname].get(), _(
+                    jdata["pardus"]["title"]))
 
         for module in os.listdir(APPDIR+"/settings"):
             if not os.path.isfile("{}/settings/{}".format(APPDIR, module)) or not module.endswith(".py"):
                 continue
-            with open("{}/settings/{}".format(APPDIR, module),"r") as f:
+            with open("{}/settings/{}".format(APPDIR, module), "r") as f:
                 print("Loading: %s" % module)
                 exec(f.read())

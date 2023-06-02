@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-31 10:26+0300\n"
+"POT-Creation-Date: 2023-06-02 09:59+0300\n"
 "PO-Revision-Date: 2023-05-09 10:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,6 +16,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
+
+#: src/MainWindow.py:29
+msgid "Lightdm Pardus Greeter Settings"
+msgstr "Lightdm Pardus Greeter Ayarları"
+
+#: src/MainWindow.py:41
+msgid "Apply"
+msgstr "Uygula"
+
+#: src/MainWindow.py:44
+msgid "Save"
+msgstr "Kaydet"
+
+#: src/MainWindow.py:47
+msgid "Cancel"
+msgstr "İptal"
+
+#: src/widget.py:81 src/widget.py:121 src/widget.py:125
+msgid "Default"
+msgstr "Varsayılan"
 
 #: src/settings/general.py:2
 msgid "General"
@@ -77,34 +97,6 @@ msgstr "Son kullanıcı adını hatırla"
 msgid "Custom logo"
 msgstr "Özel logo"
 
-#: src/settings/monitor.py:2
-msgid "Display"
-msgstr "Ekran"
-
-#: src/settings/monitor.py:4
-msgid "Mirror monitors"
-msgstr "Ekranları yansıla"
-
-#: src/settings/monitor.py:8
-msgid "Default monitor"
-msgstr "Varsayılan ekran"
-
-#: src/settings/lightdm.py:2
-msgid "Lightdm"
-msgstr "Lightdm"
-
-#: src/settings/lightdm.py:4
-msgid "Allow login as root"
-msgstr "Root ile girişi kabul et"
-
-#: src/settings/lightdm.py:8
-msgid "Allow autologin"
-msgstr "Otomatik girişi kabul et"
-
-#: src/settings/lightdm.py:12
-msgid "Autologin username"
-msgstr "Otomatik giriş kullanıcı adı"
-
 #: src/settings/userlist.py:2
 msgid "User List"
 msgstr "Kullanıcı Listesi"
@@ -125,22 +117,30 @@ msgstr "Kullanıcı gizleme tuşlarını etkinleştir"
 msgid "Hidden users list"
 msgstr "Gizli kullanıcılar listesi"
 
-#: src/MainWindow.py:26
-msgid "Lightdm Pardus Greeter Settings"
-msgstr "Lightdm Pardus Greeter Ayarları"
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr "Lightdm"
 
-#: src/MainWindow.py:38
-msgid "Apply"
-msgstr "Uygula"
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr "Root ile girişi kabul et"
 
-#: src/MainWindow.py:41
-msgid "Save"
-msgstr "Kaydet"
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr "Otomatik girişi kabul et"
 
-#: src/MainWindow.py:44
-msgid "Cancel"
-msgstr "İptal"
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
+msgstr "Otomatik giriş kullanıcı adı"
 
-#: src/widget.py:76 src/widget.py:101 src/widget.py:118 src/widget.py:121
-msgid "Default"
-msgstr "Varsayılan"
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr "Ekran"
+
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr "Ekranları yansıla"
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
+msgstr "Varsayılan ekran"

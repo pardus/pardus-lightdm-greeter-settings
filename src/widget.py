@@ -1,11 +1,14 @@
-import gi, os
-gi.require_version("Gtk","3.0")
-from gi.repository import Gtk
-import json
 import config
+import json
+import gi
+import os
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
 
 def _(v):
     return v
+
 
 class settings_object(Gtk.Box):
     def __init__(self):
@@ -19,22 +22,23 @@ class object_onoff(settings_object):
         self.switch = Gtk.Switch()
         self.image = Gtk.Image()
         self.label = Gtk.Label()
-        self.pack_start(self.image,False, False, 3)
-        self.pack_start(self.label,False, False, 3)
-        self.pack_start(Gtk.Label(),True, True, 3)
-        self.pack_start(self.switch,False, False, 3)
+        self.pack_start(self.image, False, False, 3)
+        self.pack_start(self.label, False, False, 3)
+        self.pack_start(Gtk.Label(), True, True, 3)
+        self.pack_start(self.switch, False, False, 3)
         self.show_all()
 
-    def set_data(self,data):
+    def set_data(self, data):
         if "label" in data:
             self.label.set_text(data["label"])
         if "image" in data:
-            self.image.set_from_icon_name(data["image"],0)
+            self.image.set_from_icon_name(data["image"], 0)
         if "value" in data:
             self.switch.set_state(data["value"].lower() == "true")
 
     def get_value(self):
         return self.switch.get_state()
+
 
 class object_entry(settings_object):
     def __init__(self):
@@ -44,20 +48,21 @@ class object_entry(settings_object):
         self.image = Gtk.Image()
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
-        self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(Gtk.Label(), True, True, 3)
         self.pack_start(self.entry, False, False, 3)
         self.show_all()
 
     def set_data(self, data):
         if "label" in data:
-           self.label.set_text(data["label"])
+            self.label.set_text(data["label"])
         if "image" in data:
-            self.image.set_from_icon_name(data["image"],0)
+            self.image.set_from_icon_name(data["image"], 0)
         if "value" in data:
-           self.entry.set_text(data["value"])
+            self.entry.set_text(data["value"])
 
     def get_value(self):
         return self.entry.get_text()
+
 
 class object_filepicker(settings_object):
     def __init__(self):
@@ -69,18 +74,19 @@ class object_filepicker(settings_object):
         self.reset = Gtk.Button()
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
-        self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(Gtk.Label(), True, True, 3)
         self.pack_start(self.button, False, False, 3)
         self.pack_start(self.reset, False, False, 3)
-        self.button.connect("clicked",self.select_file)
+        self.button.connect("clicked", self.select_file)
         self.button.set_label(_("Default"))
-        self.default="default"
+        self.default = "default"
         self.path = None
-        self.reset.set_image(Gtk.Image.new_from_icon_name("edit-clear-symbolic",0))
+        self.reset.set_image(
+            Gtk.Image.new_from_icon_name("edit-clear-symbolic", 0))
         self.reset.set_relief(Gtk.ReliefStyle.NONE)
-        self.reset.connect("clicked",self.reset_value)
+        self.reset.connect("clicked", self.reset_value)
 
-    def select_file(self,widget):
+    def select_file(self, widget):
         dialog = Gtk.FileChooserDialog(
             title=self.label.get_text(), parent=None, action=Gtk.FileChooserAction.OPEN
         )
@@ -92,19 +98,19 @@ class object_filepicker(settings_object):
         )
 
         response = dialog.run()
-        data = {}        
+        data = {}
         data["value"] = self.default
         if response == Gtk.ResponseType.OK:
-             data["value"] = dialog.get_filename()
-        
+            data["value"] = dialog.get_filename()
+
         self.set_data(data)
         dialog.destroy()
 
     def set_data(self, data):
         if "label" in data:
-           self.label.set_text(data["label"])
+            self.label.set_text(data["label"])
         if "image" in data:
-            self.image.set_from_icon_name(data["image"],0)
+            self.image.set_from_icon_name(data["image"], 0)
         if "default" in data:
             self.default = data["default"]
         if "value" in data:
@@ -115,9 +121,9 @@ class object_filepicker(settings_object):
                 self.button.set_label(_("Default"))
         print(self.path, self.default)
 
-    def reset_value(self,widget=None):
+    def reset_value(self, widget=None):
         self.button.set_label(_("Default"))
-        data = {}        
+        data = {}
         data["value"] = self.default
         self.set_data(data)
 
@@ -127,6 +133,7 @@ class object_filepicker(settings_object):
         else:
             return self.default
 
+
 class object_number(settings_object):
     def __init__(self):
         super().__init__()
@@ -135,7 +142,7 @@ class object_number(settings_object):
         self.image = Gtk.Image()
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
-        self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(Gtk.Label(), True, True, 3)
         self.pack_start(self.spinbutton, False, False, 3)
         self.spinbutton.set_increments(1, 1)
         self.spinbutton.set_digits(0)
@@ -144,16 +151,16 @@ class object_number(settings_object):
 
     def set_data(self, data):
         if "label" in data:
-           self.label.set_text(data["label"])
+            self.label.set_text(data["label"])
         if "image" in data:
-            self.image.set_from_icon_name(data["image"],0)
+            self.image.set_from_icon_name(data["image"], 0)
         self._digit = 0
         if "digit" in data:
-           self._digit = float(data["digit"])
-           self.spinbutton.set_increments(1/10**self._digit, 1)
-           self.spinbutton.set_digits(self._digit)
+            self._digit = float(data["digit"])
+            self.spinbutton.set_increments(1/10**self._digit, 1)
+            self.spinbutton.set_digits(self._digit)
         if "min" in data and "max" in data:
-           self.spinbutton.set_range(float(data["min"]), float(data["max"]))
+            self.spinbutton.set_range(float(data["min"]), float(data["max"]))
         if "value" in data:
             self.spinbutton.set_value(float(data["value"]))
 
@@ -163,6 +170,7 @@ class object_number(settings_object):
         else:
             return self.spinbutton.get_value()
 
+
 class object_selection(settings_object):
     def __init__(self):
         super().__init__()
@@ -171,25 +179,25 @@ class object_selection(settings_object):
         self.image = Gtk.Image()
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
-        self.pack_start(Gtk.Label(),True, True, 3)
+        self.pack_start(Gtk.Label(), True, True, 3)
         self.pack_start(self.combo, False, False, 3)
         self.show_all()
         self.__opts = None
         cell_renderer = Gtk.CellRendererText()
-        self.combo.pack_start(cell_renderer,True)
+        self.combo.pack_start(cell_renderer, True)
         self.combo.add_attribute(cell_renderer, "text", 0)
 
-    def set_data(self,data):
+    def set_data(self, data):
         if "label" in data:
             self.label.set_text(data["label"])
         if "image" in data:
-            self.image.set_from_icon_name(data["image"],0)
+            self.image.set_from_icon_name(data["image"], 0)
         if "options" in data:
             self.__opts = data["options"]
-            store = Gtk.ListStore(str,str)
+            store = Gtk.ListStore(str, str)
             for opt in data["options"]:
                 if ":" in opt:
-                    store.append([opt.split(":")[0],opt.split(":")[1]])
+                    store.append([opt.split(":")[0], opt.split(":")[1]])
                 else:
                     store.append([opt, opt])
             self.combo.set_model(store)
@@ -212,11 +220,11 @@ class object_selection(settings_object):
 
 class Settings:
     def __init__(self):
-        self.ONOFF="onoff"
-        self.COMBO="combo"
-        self.ENTRY="entry"
-        self.NUMBER="number"
-        self.FILEPICKER="filepicker"
+        self.ONOFF = "onoff"
+        self.COMBO = "combo"
+        self.ENTRY = "entry"
+        self.NUMBER = "number"
+        self.FILEPICKER = "filepicker"
         self.widgets = {}
         self.name = ""
 
@@ -248,20 +256,19 @@ class Settings:
                 ret[w] = self.widgets[w].get_value()
         return ret
 
-    def get_value(self,name):
+    def get_value(self, name):
         if name in self.widgets:
             return self.widgets[name].get_value()
         return None
 
-
-    def set_data(self,name,data,hidden=False):
+    def set_data(self, name, data, hidden=False):
         if name in self.widgets:
             self.widgets[name].set_data(data)
             self.widgets[name].hidden = hidden
 
-    def build(self,json_data):
+    def build(self, json_data):
         for widget in json_data:
             if widget == "pardus":
                 continue
-            self.add_option(widget, json_data[widget]["type"],json_data[widget])
-
+            self.add_option(
+                widget, json_data[widget]["type"], json_data[widget])

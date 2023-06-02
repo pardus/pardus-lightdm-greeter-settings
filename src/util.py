@@ -1,5 +1,7 @@
 import configparser
 import os
+
+
 def list_gtk_themes():
     ret = []
     for dir in os.listdir("/usr/share/themes"):
@@ -9,12 +11,14 @@ def list_gtk_themes():
                 ret.append(tname+":"+dir)
     return ret
 
+
 def get_gtk_theme_name(theme):
     tcfg = configparser.RawConfigParser()
     tcfg.read("/usr/share/themes/{}/index.theme".format(theme))
     if "X-GNOME-Metatheme" in tcfg:
         return tcfg["X-GNOME-Metatheme"]["Name"]
     return theme
+
 
 def list_icon_themes():
     ret = []
@@ -25,12 +29,14 @@ def list_icon_themes():
                 ret.append(tname+":"+dir)
     return ret
 
+
 def readfile(path):
-    f = open(path,"r")
+    f = open(path, "r")
     ret = f.read()
     f.close()
-    del(f)
+    del (f)
     return ret
+
 
 def get_icon_theme_name(theme):
     tcfg = configparser.RawConfigParser()
@@ -38,5 +44,3 @@ def get_icon_theme_name(theme):
         if line.startswith("Name="):
             return line[5:]
     return theme
-
-
