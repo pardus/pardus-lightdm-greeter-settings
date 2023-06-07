@@ -11,12 +11,16 @@ def list_gtk_themes():
                 ret.append(tname+":"+dir)
     return ret
 
-
+lang=os.environ["LANG"].split(".")[0].split("_")[0]
 def get_gtk_theme_name(theme):
     tcfg = configparser.RawConfigParser()
     tcfg.read("/usr/share/themes/{}/index.theme".format(theme))
     if "X-GNOME-Metatheme" in tcfg:
-        return tcfg["X-GNOME-Metatheme"]["Name"]
+        if "Name[{}]".format(lang) in tcfg["X-GNOME-Metatheme"]:
+            return tcfg["X-GNOME-Metatheme"]["Name[{}]".format(lang)]
+        elif "Name" in tcfg["X-GNOME-Metatheme"]:
+            return tcfg["X-GNOME-Metatheme"]["Name"]
+        return theme
     return theme
 
 
@@ -42,5 +46,5 @@ def get_icon_theme_name(theme):
     tcfg = configparser.RawConfigParser()
     for line in readfile("/usr/share/icons/{}/index.theme".format(theme)):
         if line.startswith("Name="):
-            return line[5:]
+            return line[len("Name="):]
     return theme

@@ -204,11 +204,17 @@ class object_selection(settings_object):
         if "value" in data:
             if self.__opts:
                 value = data["value"]
-                if ":" not in value:
-                    value = value+":"+value
-                if value in self.__opts:
-                    i = self.__opts.index(value)
-                    self.combo.set_active(i)
+                i = 0
+                if ":" in value:
+                    if value in self.__opts:
+                        i = self.__opts.index(value)
+                else:
+                    for item in self.__opts:
+                        if item.startswith(value+":") or item.endswith(value+":"):
+                            break
+                        i+=1
+                self.combo.set_active(i)
+            print(data, self.__opts)
 
     def get_value(self):
         tree_iter = self.combo.get_active_iter()
