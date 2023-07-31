@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-02 09:59+0300\n"
+"POT-Creation-Date: 2023-07-31 15:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,28 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.py:29
+#: src/MainWindow.py:29 src/MainWindow.py:72
 msgid "Lightdm Pardus Greeter Settings"
 msgstr ""
 
 #: src/MainWindow.py:41
-msgid "Apply"
-msgstr ""
-
-#: src/MainWindow.py:44
 msgid "Save"
 msgstr ""
 
-#: src/MainWindow.py:47
-msgid "Cancel"
+#: src/MainWindow.py:44
+msgid "Close"
+msgstr ""
+
+#: src/MainWindow.py:73
+msgid "Are you want to save current settings ?"
+msgstr ""
+
+#: src/MainWindow.py:74
+msgid "No"
+msgstr ""
+
+#: src/MainWindow.py:75
+msgid "Yes"
 msgstr ""
 
 #: src/widget.py:81 src/widget.py:121 src/widget.py:125
@@ -71,6 +79,34 @@ msgstr ""
 
 #: src/settings/general.py:38
 msgid "Start command before login"
+msgstr ""
+
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr ""
+
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr ""
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
+msgstr ""
+
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr ""
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr ""
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr ""
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
 msgstr ""
 
 #: src/settings/gtkwindow.py:2
@@ -115,32 +151,4 @@ msgstr ""
 
 #: src/settings/userlist.py:16
 msgid "Hidden users list"
-msgstr ""
-
-#: src/settings/lightdm.py:2
-msgid "Lightdm"
-msgstr ""
-
-#: src/settings/lightdm.py:4
-msgid "Allow login as root"
-msgstr ""
-
-#: src/settings/lightdm.py:8
-msgid "Allow autologin"
-msgstr ""
-
-#: src/settings/lightdm.py:12
-msgid "Autologin username"
-msgstr ""
-
-#: src/settings/monitor.py:2
-msgid "Display"
-msgstr ""
-
-#: src/settings/monitor.py:4
-msgid "Mirror monitors"
-msgstr ""
-
-#: src/settings/monitor.py:8
-msgid "Default monitor"
 msgstr ""
