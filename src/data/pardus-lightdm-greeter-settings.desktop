@@ -9,5 +9,5 @@ Exec=pardus-lightdm-greeter-settings
 Icon=pardus-lightdm-greeter-settings
 Terminal=false
 Type=Application
-Categories=Settings;
+Categories=Settings;X-Pardus-Apps;
 StartupNotify=true
