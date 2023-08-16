@@ -27,6 +27,9 @@ except:
 class MainWindow(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self, title=_("Lightdm Pardus Greeter Settings"))
+        self.set_icon_name("pardus-lightdm-greeter-settings")
+
+
 
         # Create Notebook
         self.notebook = Gtk.Notebook()
