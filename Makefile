@@ -19,7 +19,7 @@ install: installmo
 	ln -s ../../../../pardus/$(APPNAME)/data/icon.svg \
 	    $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps/$(APPNAME).svg || true
 	ln -s ../pardus/$(APPNAME)/data/$(APPNAME).desktop \
-	    $(DESTDIR)/$(PREFIX)/share/applications/$(APPNAME).desktop || true
+	    $(DESTDIR)/$(PREFIX)/share/applications/tr.org.pardus.lightdm-greeter-setting.desktop || true
 	# install polkit policy
 	install src/data/*.policy $(DESTDIR)/$(PREFIX)/share/polkit-1/actions/
 	chmod 755 -R $(DESTDIR)$(APPDIR)
