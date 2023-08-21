@@ -11,8 +11,5 @@
   },
   "show-realname": {
     "type": "onoff"
-  },
-  "hidden-users": {
-    "type": "entry"
   }
 }
