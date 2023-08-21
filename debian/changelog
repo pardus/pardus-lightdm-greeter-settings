@@ -1,6 +1,39 @@
 pardus-lightdm-greeter-settings (0.0.1) unstable; urgency=medium
 
-  [ aliriza ]
+  [ Ali Riza Keskin ]
   * initial commit
+  * fix debian packaging
+  * fix polkit rule
+  * translation
+  * fix 0 digit number picker widget
+  * autologin user backend
+  * reset button
+  * apply buton added
+  * save apply cancel orderx
+  * background image copy if starts with /home
+  * fix replace wallpaper issue
+  * minor fixes
+  * lint fixes
+  * Gtk theme name fix
+  * save button dialog and remove apply button
+  * update icon
+  * fix category
+  * fix missing window icon
+  * pkexec move to saveconfig.py file
+  * fix polkit path and minor fixes
+  * desktop file name changed
+  * gitignore additions
+  * minor fixes
+  * minor fixes
+  * update icon
+  * gtk theme name
+  * minor fix
+  * missing translation fix for image selection
 
- -- Ali Riza KESKIN <aliriza.keskin@pardus.org.tr>  Mon, 26 Dec 2022 18:26:34 +0300
+  [ Fatih Altun ]
+  * Rm unnecessary files
+  * Fix typo
+  * Update copyright
+  * Update debian standards
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Mon, 21 Aug 2023 16:14:12 +0300
