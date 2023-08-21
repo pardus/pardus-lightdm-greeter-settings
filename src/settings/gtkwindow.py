@@ -2,6 +2,7 @@
 _("Gtk Window")
 self.settings["gtkwindow"].set_data("background", {
     "label": _("Background image"),
+    "button_label": _("Select an image"),
     "value": config.get("background", "user", "gtkwindow"),
     "default": "user"
 })
@@ -20,5 +21,6 @@ self.settings["gtkwindow"].set_data("username-cache", {
 self.settings["gtkwindow"].set_data("logo", {
     "label": _("Custom logo"),
     "value": config.get("logo", "", "gtkwindow"),
+    "button_label": _("Select an image"),
     "default": ""
 })

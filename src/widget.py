@@ -6,10 +6,6 @@ import os
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-def _(v):
-    return v
-
-
 class settings_object(Gtk.Box):
     def __init__(self):
         super().__init__()
@@ -72,14 +68,14 @@ class object_filepicker(settings_object):
         self.image = Gtk.Image()
         self.button = Gtk.Button()
         self.reset = Gtk.Button()
+        self.default_button_label = ""
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
         self.pack_start(Gtk.Label(), True, True, 3)
         self.pack_start(self.reset, False, False, 3)
         self.pack_start(self.button, False, False, 3)
         self.button.connect("clicked", self.select_file)
-        self.button.set_label(_("Select an image"))
-        self.default = "default"
+        self.default = ""
         self.path = None
         self.reset.set_image(
             Gtk.Image.new_from_icon_name("user-trash-symbolic", Gtk.IconSize.BUTTON))
@@ -109,6 +105,8 @@ class object_filepicker(settings_object):
     def set_data(self, data):
         if "label" in data:
             self.label.set_text(data["label"])
+        if "button_label" in data:
+            self.default_button_label = data["button_label"]
         if "image" in data:
             self.image.set_from_icon_name(data["image"], 0)
         if "default" in data:
@@ -118,11 +116,11 @@ class object_filepicker(settings_object):
             if self.default != self.path:
                 self.button.set_label(os.path.basename(self.path))
             else:
-                self.button.set_label(_("Select an image"))
+                self.button.set_label(self.default_button_label)
         print(self.path, self.default)
 
     def reset_value(self, widget=None):
-        self.button.set_label(_("Select an image"))
+        self.button.set_label(self.default_button_label)
         data = {}
         data["value"] = self.default
         self.set_data(data)

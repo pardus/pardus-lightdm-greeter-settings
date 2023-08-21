@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-21 11:25+0000\n"
+"POT-Creation-Date: 2023-08-21 12:35+0000\n"
 "PO-Revision-Date: 2023-05-09 10:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,9 +41,37 @@ msgstr "Hayır"
 msgid "Yes"
 msgstr "Evet"
 
-#: src/widget.py:81 src/widget.py:121 src/widget.py:125
-msgid "Select an image"
-msgstr "Bir resim seçin"
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr "Lightdm"
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr "Root ile girişi kabul et"
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr "Otomatik girişi kabul et"
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
+msgstr "Otomatik giriş kullanıcı adı"
+
+#: src/settings/userlist.py:2
+msgid "User List"
+msgstr "Kullanıcı Listesi"
+
+#: src/settings/userlist.py:4
+msgid "Enable username list"
+msgstr "Kullanıcı adı listesini etkinleştir"
+
+#: src/settings/userlist.py:8
+msgid "Show real names"
+msgstr "Gerçek isimleri göster"
+
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
+msgstr "Kullanıcı gizleme tuşlarını etkinleştir"
 
 #: src/settings/general.py:2
 msgid "General"
@@ -93,22 +121,6 @@ msgstr "Ekranları yansıla"
 msgid "Default monitor"
 msgstr "Varsayılan ekran"
 
-#: src/settings/lightdm.py:2
-msgid "Lightdm"
-msgstr "Lightdm"
-
-#: src/settings/lightdm.py:4
-msgid "Allow login as root"
-msgstr "Root ile girişi kabul et"
-
-#: src/settings/lightdm.py:8
-msgid "Allow autologin"
-msgstr "Otomatik girişi kabul et"
-
-#: src/settings/lightdm.py:12
-msgid "Autologin username"
-msgstr "Otomatik giriş kullanıcı adı"
-
 #: src/settings/gtkwindow.py:2
 msgid "Gtk Window"
 msgstr "Gtk Penceresi"
@@ -117,35 +129,22 @@ msgstr "Gtk Penceresi"
 msgid "Background image"
 msgstr "Arkaplan resmi"
 
-#: src/settings/gtkwindow.py:9
+#: src/settings/gtkwindow.py:5 src/settings/gtkwindow.py:24
+msgid "Select an image"
+msgstr "Bir resim seçin"
+
+#: src/settings/gtkwindow.py:10
 msgid "Allow empty password"
 msgstr "Boş parola kabul et"
 
-#: src/settings/gtkwindow.py:13
+#: src/settings/gtkwindow.py:14
 msgid "Login without enter"
 msgstr "Enter olmadan giriş"
 
-#: src/settings/gtkwindow.py:17
+#: src/settings/gtkwindow.py:18
 msgid "Remember last username"
 msgstr "Son kullanıcı adını hatırla"
 
-#: src/settings/gtkwindow.py:21
+#: src/settings/gtkwindow.py:22
 msgid "Custom logo"
 msgstr "Özel logo"
-
-#: src/settings/userlist.py:2
-msgid "User List"
-msgstr "Kullanıcı Listesi"
-
-#: src/settings/userlist.py:4
-msgid "Enable username list"
-msgstr "Kullanıcı adı listesini etkinleştir"
-
-#: src/settings/userlist.py:8
-msgid "Show real names"
-msgstr "Gerçek isimleri göster"
-
-#: src/settings/userlist.py:12
-msgid "Enable hide user button"
-msgstr "Kullanıcı gizleme tuşlarını etkinleştir"
-
