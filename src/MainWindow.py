@@ -1,4 +1,5 @@
 import shutil
+import subprocess
 import util
 from widget import *
 import gi
@@ -7,7 +8,7 @@ import os
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-APPDIR = os.path.dirname(os.path.abspath(__file__))
+APPDIR = "/usr/share/pardus/pardus-lightdm-greeter-settings/"
 
 try:
     import locale
@@ -52,7 +53,7 @@ class MainWindow(Gtk.Window):
         box.pack_start(box2, False, False, 3)
 
         # bottom box
-        box2.pack_start(Gtk.Label("TUBİTAK ULAKBIM | 2023"), False, False, 13)
+        box2.pack_start(Gtk.Label("TÜBİTAK ULAKBİM | 2023"), False, False, 13)
         box2.pack_start(Gtk.Label(), True, True, 0)
         box2.pack_start(box3, False, False, 0)
 
@@ -81,6 +82,7 @@ class MainWindow(Gtk.Window):
 
     def apply_button_event(self, widget=None):
         inidata = ""
+        background = ""
         if "gtkwindow" in self.settings:
             if "background" in self.settings["gtkwindow"].widgets:
                 background = self.settings["gtkwindow"].widgets["background"]
@@ -88,8 +90,6 @@ class MainWindow(Gtk.Window):
                 if os.path.isfile(background) and background.startswith("/home"):
                     if os.path.isfile("/var/lib/lightdm/wallpaper"):
                         os.unlink("/var/lib/lightdm/wallpaper")
-                    shutil.copyfile(background, "/var/lib/lightdm/wallpaper")
-                    os.chmod("/var/lib/lightdm/wallpaper", 0o755)
                     self.settings["gtkwindow"].widgets["background"].path = "/var/lib/lightdm/wallpaper"
         for s in self.settings:
             inidata += "[{}]\n".format(self.settings[s].name)
@@ -97,21 +97,11 @@ class MainWindow(Gtk.Window):
             for key in dump:
                 inidata += "{}={}\n".format(key, dump[key])
             inidata += "\n"
-        with open("/etc/pardus/greeter.conf.d/00-greeter-settings.conf", "w") as f:
-            f.write(inidata)
+        autologin_user = ""
         if "lightdm" in self.settings:
-            autologin_file = "/usr/share/lightdm/lightdm.conf.d/99-pardus-lightdm-greeter-autologin.conf"
             autologin_user = self.settings["lightdm"].get_value(
                 "autologin-user")
-            if not (autologin_user == "" or autologin_user == None):
-                data = "[Seat:*]\n"
-                data += "autologin-user={}\n".format(autologin_user)
-                with open(autologin_file, "w") as f:
-                    f.write(data)
-            else:
-                if os.path.isfile(autologin_file):
-                    os.unlink(autologin_file)
-
+        subprocess.run(["pkexec", APPDIR+"/saveconfig.py", inidata, background, autologin_user])
     def init_pages(self):
         pages = os.listdir("{}/data/schemas/".format(APPDIR))
         pages.sort()

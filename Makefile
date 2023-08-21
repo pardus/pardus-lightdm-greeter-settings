@@ -14,14 +14,10 @@ install: installmo
 	# copy source code
 	cp -prfv src/* $(DESTDIR)$(APPDIR)
 	chmod 755 -R $(DESTDIR)$(APPDIR)
-	# generate application launch command
-	echo "#!/bin/sh" > $(DESTDIR)$(APPDIR)/$(APPNAME).sh
-	echo "exec pkexec $(PREFIX)/share/pardus/$(APPNAME)/main.py" \
-	    >> $(DESTDIR)$(APPDIR)/$(APPNAME).sh
 	# make executable
-	chmod 755 $(DESTDIR)$(APPDIR)/$(APPNAME).sh
+	chmod 755 $(DESTDIR)$(APPDIR)/$(APPNAME)
 	# symlink files
-	ln -s ../share/pardus/$(APPNAME)/$(APPNAME).sh \
+	ln -s ../share/pardus/$(APPNAME)/main.py \
 	    $(DESTDIR)/$(PREFIX)/bin/$(APPNAME) || true
 	ln -s ../../../../pardus/$(APPNAME)/data/icon.svg \
 	    $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps/$(APPNAME).svg || true
