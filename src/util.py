@@ -13,8 +13,7 @@ def list_icon_themes():
     ret = []
     for dir in os.listdir("/usr/share/icons"):
         if os.path.isfile("/usr/share/icons/{}/index.theme".format(dir)):
-            if tname:
-                ret.append(dir+":"+dir)
+            ret.append(dir+":"+dir)
     return ret
 
 
