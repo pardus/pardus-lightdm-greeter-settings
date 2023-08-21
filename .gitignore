@@ -1,3 +1,7 @@
 debian/pardus-lightdm-greeter-settings/
 *.pyc
 *.mo
+debian/pardus-lightdm-greeter-settings.debhelper.log
+debian/debian/pardus-lightdm-greeter-settings.substvars
+debian/files
+debhelper-build-stamp
