@@ -2,9 +2,9 @@ Source: pardus-lightdm-greeter-settings
 Section: misc
 Priority: optional
 Maintainer: Ali Riza KESKIN <aliriza.keskin@pardus.org.tr>
-Build-Depends: debhelper (>= 10), make
-Standards-Version: 4.3.0
-Homepage: https://www.pardus.org.tr
+Build-Depends: debhelper-compat (= 13), make
+Standards-Version: 4.6.1
+Homepage: https://github.com/pardus/pardus-lightdm-greeter-settings
 
 Package: pardus-lightdm-greeter-settings
 Architecture: all
