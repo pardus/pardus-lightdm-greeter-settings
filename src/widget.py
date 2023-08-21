@@ -75,14 +75,14 @@ class object_filepicker(settings_object):
         self.pack_start(self.image, False, False, 3)
         self.pack_start(self.label, False, False, 3)
         self.pack_start(Gtk.Label(), True, True, 3)
-        self.pack_start(self.button, False, False, 3)
         self.pack_start(self.reset, False, False, 3)
+        self.pack_start(self.button, False, False, 3)
         self.button.connect("clicked", self.select_file)
-        self.button.set_label(_("Default"))
+        self.button.set_label(_("Select a file"))
         self.default = "default"
         self.path = None
         self.reset.set_image(
-            Gtk.Image.new_from_icon_name("edit-clear-symbolic", 0))
+            Gtk.Image.new_from_icon_name("user-trash-symbolic", 0))
         self.reset.set_relief(Gtk.ReliefStyle.NONE)
         self.reset.connect("clicked", self.reset_value)
 
@@ -118,11 +118,11 @@ class object_filepicker(settings_object):
             if self.default != self.path:
                 self.button.set_label(os.path.basename(self.path))
             else:
-                self.button.set_label(_("Default"))
+                self.button.set_label(_("Select a file"))
         print(self.path, self.default)
 
     def reset_value(self, widget=None):
-        self.button.set_label(_("Default"))
+        self.button.set_label(_("Select a file"))
         data = {}
         data["value"] = self.default
         self.set_data(data)
@@ -220,7 +220,7 @@ class object_selection(settings_object):
         tree_iter = self.combo.get_active_iter()
         if tree_iter is not None:
             model = self.combo.get_model()
-            return model[tree_iter][0]
+            return model[tree_iter][-1]
         return ""
 
 

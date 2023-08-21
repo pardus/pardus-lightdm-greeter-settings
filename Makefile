@@ -13,9 +13,6 @@ install: installmo
 	mkdir -p $(DESTDIR)/$(PREFIX)/share/polkit-1/actions/
 	# copy source code
 	cp -prfv src/* $(DESTDIR)$(APPDIR)
-	chmod 755 -R $(DESTDIR)$(APPDIR)
-	# make executable
-	chmod 755 $(DESTDIR)$(APPDIR)/$(APPNAME)
 	# symlink files
 	ln -s ../share/pardus/$(APPNAME)/main.py \
 	    $(DESTDIR)/$(PREFIX)/bin/$(APPNAME) || true
@@ -25,7 +22,7 @@ install: installmo
 	    $(DESTDIR)/$(PREFIX)/share/applications/$(APPNAME).desktop || true
 	# install polkit policy
 	install src/data/*.policy $(DESTDIR)/$(PREFIX)/share/polkit-1/actions/
-	sed -i "s|@APP@|$(APPDIR)/main.py|g" $(DESTDIR)/$(PREFIX)/share/polkit-1/actions/*.policy
+	chmod 755 -R $(DESTDIR)$(APPDIR)
 
 installmo:
 	for file in `ls po/*.po`; do \

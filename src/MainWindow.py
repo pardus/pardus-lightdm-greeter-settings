@@ -8,7 +8,7 @@ import os
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-APPDIR = "/usr/share/pardus/pardus-lightdm-greeter-settings/"
+APPDIR = "/usr/share/pardus/pardus-lightdm-greeter-settings"
 
 try:
     import locale
