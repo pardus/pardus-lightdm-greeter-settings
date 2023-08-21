@@ -27,7 +27,7 @@ except:
 
 class MainWindow(Gtk.Window):
     def __init__(self):
-        Gtk.Window.__init__(self, title=_("Lightdm Pardus Greeter Settings"))
+        Gtk.Window.__init__(self, title=_("Pardus Lightdm Settings"))
         self.set_icon_name("pardus-lightdm-greeter-settings")
 
 
@@ -73,7 +73,7 @@ class MainWindow(Gtk.Window):
         dialog = Dialog(
             Gtk.MessageType.QUESTION,
             Gtk.ButtonsType.NONE,
-            _("Lightdm Pardus Greeter Settings"),
+            _("Pardus Lightdm Settings"),
             _("Are you want to save current settings ?"))
         dialog.add_button(_("No"), Gtk.ResponseType.NO)
         dialog.add_button(_("Yes"), Gtk.ResponseType.YES)

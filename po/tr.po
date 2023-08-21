@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-21 11:18+0000\n"
+"POT-Creation-Date: 2023-08-21 11:25+0000\n"
 "PO-Revision-Date: 2023-05-09 10:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #: src/MainWindow.py:30 src/MainWindow.py:76
-msgid "Lightdm Pardus Greeter Settings"
-msgstr "Lightdm Pardus Greeter Ayarları"
+msgid "Pardus Lightdm Settings"
+msgstr "Pardus Lightdm Ayarları"
 
 #: src/MainWindow.py:45
 msgid "Save"
@@ -149,9 +149,3 @@ msgstr "Gerçek isimleri göster"
 msgid "Enable hide user button"
 msgstr "Kullanıcı gizleme tuşlarını etkinleştir"
 
-#: src/settings/userlist.py:16
-msgid "Hidden users list"
-msgstr "Gizli kullanıcılar listesi"
-
-#~ msgid "Default"
-#~ msgstr "Varsayılan"

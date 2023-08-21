@@ -2,15 +2,16 @@
 <!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 
 <policyconfig>
-    <vendor>pardus</vendor>
-    <vendor_url>http://github.com/pardus/pardus-lightdm-greeter-settings</vendor_url>
-     <action id="tr.org.pardus.lightdm-greeter-setting.policy">
-      <description>Run pardus lightdm greeter settings as root</description>
-      <message>Authentication is required to run the pardus lightdm greeter settings as root</message>
+     <vendor>Pardus Developers</vendor>
+      <vendor_url>https://www.pardus.org.tr/</vendor_url>
+     <action id="tr.org.pardus.lightdm-greeter-settings.policy">
+      <description>Run Pardus Lightdm Greeter Settings as root</description>
+      <message>Authentication is required for the Pardus Lightdm Greeter Settings</message>
+    <message xml:lang="tr">Pardus Lightdm Ayarları uygulaması için yetkilendirme gerekiyor</message>
       <defaults>
         <allow_any>auth_admin</allow_any>
         <allow_inactive>auth_admin</allow_inactive>
-        <allow_active>auth_admin</allow_active>
+        <allow_active>auth_admin_keep</allow_active>
       </defaults>
       <annotate key="org.freedesktop.policykit.exec.path">/usr/share/pardus/pardus-lightdm-greeter-settings/saveconfig.py</annotate>
       <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
