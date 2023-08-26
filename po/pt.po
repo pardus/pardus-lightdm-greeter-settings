@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-21 12:35+0000\n"
+"PO-Revision-Date: 2023-08-26 18:39+0100\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: src/MainWindow.py:30 src/MainWindow.py:76
+msgid "Pardus Lightdm Settings"
+msgstr "Definições do Lightdm Pardus"
+
+#: src/MainWindow.py:45
+msgid "Save"
+msgstr "Gravar"
+
+#: src/MainWindow.py:48
+msgid "Close"
+msgstr "Fechar"
+
+#: src/MainWindow.py:77
+msgid "Are you want to save current settings ?"
+msgstr "Pretende gravar as definições atuais?"
+
+#: src/MainWindow.py:78
+msgid "No"
+msgstr "Não"
+
+#: src/MainWindow.py:79
+msgid "Yes"
+msgstr "Sim"
+
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr "Lightdm"
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr "Permitir iniciar sessão como root"
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr "Permitir inicio de sessão automático"
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
+msgstr "Nome de utilizador do início de sessão automático"
+
+#: src/settings/userlist.py:2
+msgid "User List"
+msgstr "Lista de utilizadores"
+
+#: src/settings/userlist.py:4
+msgid "Enable username list"
+msgstr "Ativar lista de utilizadores"
+
+#: src/settings/userlist.py:8
+msgid "Show real names"
+msgstr "Mostrar os nomes verdadeiros"
+
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
+msgstr "Ativar o botão ocultar utilizador"
+
+#: src/settings/general.py:2
+msgid "General"
+msgstr "Geral"
+
+#: src/settings/general.py:4
+msgid "Scale"
+msgstr "Escala"
+
+#: src/settings/general.py:9
+msgid "Gtk theme"
+msgstr "Tema Gtk"
+
+#: src/settings/general.py:15
+msgid "Icon theme"
+msgstr "Tema de ícones"
+
+#: src/settings/general.py:21
+msgid "Font Size"
+msgstr "Tamanho do tipo de letra"
+
+#: src/settings/general.py:26
+msgid "Prefer dark theme"
+msgstr "Preferir tema escuro"
+
+#: src/settings/general.py:30
+msgid "Black screen timeout (sec)"
+msgstr "Tempo limite do ecrã em branco (seg)"
+
+#: src/settings/general.py:34
+msgid "Initial command"
+msgstr "Comando inicial"
+
+#: src/settings/general.py:38
+msgid "Start command before login"
+msgstr "Executar o comando antes de iniciar sessão"
+
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr "Ecrã"
+
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr "Espelhar monitores"
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
+msgstr "Monitor predefinido"
+
+#: src/settings/gtkwindow.py:2
+msgid "Gtk Window"
+msgstr "Janela Gtk"
+
+#: src/settings/gtkwindow.py:4
+msgid "Background image"
+msgstr "Imagem de fundo"
+
+#: src/settings/gtkwindow.py:5 src/settings/gtkwindow.py:24
+msgid "Select an image"
+msgstr "Selecionar uma imagem"
+
+#: src/settings/gtkwindow.py:10
+msgid "Allow empty password"
+msgstr "Permitir palavra-passe em branco"
+
+#: src/settings/gtkwindow.py:14
+msgid "Login without enter"
+msgstr "Iniciar sessão sem entrar"
+
+#: src/settings/gtkwindow.py:18
+msgid "Remember last username"
+msgstr "Memorizar o último nome de utilizador"
+
+#: src/settings/gtkwindow.py:22
+msgid "Custom logo"
+msgstr "Logótipo personalizado"
