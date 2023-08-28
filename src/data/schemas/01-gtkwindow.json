@@ -1,6 +1,6 @@
 {
   "pardus": {
-      "title": "Gtk Window",
+      "title": "GTK Window",
       "name": "gtkwindow"
   },
   "background": {
