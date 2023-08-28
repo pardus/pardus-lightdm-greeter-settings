@@ -74,7 +74,7 @@ class MainWindow(Gtk.Window):
             Gtk.MessageType.QUESTION,
             Gtk.ButtonsType.NONE,
             _("Pardus Lightdm Settings"),
-            _("Are you want to save current settings ?"))
+            _("Are you want to save current settings?"))
         dialog.add_button(_("No"), Gtk.ResponseType.NO)
         dialog.add_button(_("Yes"), Gtk.ResponseType.YES)
         if dialog.show():
