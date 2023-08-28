@@ -32,7 +32,7 @@ msgid "Close"
 msgstr "Fechar"
 
 #: src/MainWindow.py:77
-msgid "Are you want to save current settings ?"
+msgid "Are you want to save current settings?"
 msgstr "Pretende gravar as definições atuais?"
 
 #: src/MainWindow.py:78
@@ -84,7 +84,7 @@ msgid "Scale"
 msgstr "Escala"
 
 #: src/settings/general.py:9
-msgid "Gtk theme"
+msgid "GTK theme"
 msgstr "Tema GTK"
 
 #: src/settings/general.py:15
@@ -124,7 +124,7 @@ msgid "Default monitor"
 msgstr "Monitor predefinido"
 
 #: src/settings/gtkwindow.py:2
-msgid "Gtk Window"
+msgid "GTK Window"
 msgstr "Janela GTK"
 
 #: src/settings/gtkwindow.py:4
