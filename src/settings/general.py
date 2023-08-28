@@ -6,7 +6,7 @@ self.settings["main"].set_data("scale", {
     "digit": "2"
 })
 self.settings["main"].set_data("gtk-theme", {
-    "label": _("Gtk theme"),
+    "label": _("GTK theme"),
     "options": util.list_gtk_themes(),
     "value": config.get("gtk-theme", "Adwaita")
 })
