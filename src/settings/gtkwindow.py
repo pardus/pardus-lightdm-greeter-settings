@@ -1,4 +1,4 @@
-# Gtk Window
+# GTK Window
 _("GTK Window")
 self.settings["gtkwindow"].set_data("background", {
     "label": _("Background image"),
