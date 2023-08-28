@@ -1,3 +1,29 @@
+pardus-lightdm-greeter-settings (0.0.2) unstable; urgency=medium
+
+  [ Hugo Carvalho ]
+  * Add Portuguese translation
+
+  [ Sabri Ünal ]
+  * data: Update Turkish translation
+
+  [ Fatih Altun ]
+  * Fix typo
+  * Update pot file
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translation
+
+  [ Fatih Altun ]
+  * Update Turkish translations
+  * Fix typo
+  * Update pot file
+  * Update Turkish translations
+  * Fix typo
+  * Fix typo
+  * Update msgids for pt.po
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Tue, 29 Aug 2023 01:40:25 +0300
+
 pardus-lightdm-greeter-settings (0.0.1) unstable; urgency=medium
 
   [ Ali Riza Keskin ]
