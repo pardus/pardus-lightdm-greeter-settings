@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-21 12:35+0000\n"
-"PO-Revision-Date: 2023-08-26 18:39+0100\n"
+"PO-Revision-Date: 2023-08-28 23:11+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -73,7 +73,7 @@ msgstr "Mostrar os nomes verdadeiros"
 
 #: src/settings/userlist.py:12
 msgid "Enable hide user button"
-msgstr "Ativar o botão ocultar utilizador"
+msgstr "Ativar o botão de ocultar o utilizador"
 
 #: src/settings/general.py:2
 msgid "General"
@@ -85,7 +85,7 @@ msgstr "Escala"
 
 #: src/settings/general.py:9
 msgid "Gtk theme"
-msgstr "Tema Gtk"
+msgstr "Tema GTK"
 
 #: src/settings/general.py:15
 msgid "Icon theme"
@@ -125,7 +125,7 @@ msgstr "Monitor predefinido"
 
 #: src/settings/gtkwindow.py:2
 msgid "Gtk Window"
-msgstr "Janela Gtk"
+msgstr "Janela GTK"
 
 #: src/settings/gtkwindow.py:4
 msgid "Background image"
@@ -141,7 +141,7 @@ msgstr "Permitir palavra-passe em branco"
 
 #: src/settings/gtkwindow.py:14
 msgid "Login without enter"
-msgstr "Iniciar sessão sem entrar"
+msgstr "Iniciar sessão sem premir a tecla Enter"
 
 #: src/settings/gtkwindow.py:18
 msgid "Remember last username"
