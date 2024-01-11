@@ -12,6 +12,10 @@
   "dark-theme": {
     "type": "onoff"
   },
+  
+  "touch-mode": {
+    "type": "onoff"
+  },
   "scale": {
     "type": "number",
     "min" : "1",
