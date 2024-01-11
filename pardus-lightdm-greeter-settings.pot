@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 01:20+0300\n"
+"POT-Creation-Date: 2024-01-11 10:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,20 +41,56 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: src/settings/userlist.py:2
-msgid "User List"
+#: src/settings/general.py:2
+msgid "General"
 msgstr ""
 
-#: src/settings/userlist.py:4
-msgid "Enable username list"
+#: src/settings/general.py:4
+msgid "Scale"
 msgstr ""
 
-#: src/settings/userlist.py:8
-msgid "Show real names"
+#: src/settings/general.py:9
+msgid "GTK theme"
 msgstr ""
 
-#: src/settings/userlist.py:12
-msgid "Enable hide user button"
+#: src/settings/general.py:15
+msgid "Icon theme"
+msgstr ""
+
+#: src/settings/general.py:21
+msgid "Font Size"
+msgstr ""
+
+#: src/settings/general.py:26
+msgid "Prefer dark theme"
+msgstr ""
+
+#: src/settings/general.py:30
+msgid "Touch screen mode"
+msgstr ""
+
+#: src/settings/general.py:34
+msgid "Black screen timeout (sec)"
+msgstr ""
+
+#: src/settings/general.py:38
+msgid "Initial command"
+msgstr ""
+
+#: src/settings/general.py:42
+msgid "Start command before login"
+msgstr ""
+
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr ""
+
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr ""
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
 msgstr ""
 
 #: src/settings/lightdm.py:2
@@ -101,50 +137,18 @@ msgstr ""
 msgid "Custom logo"
 msgstr ""
 
-#: src/settings/monitor.py:2
-msgid "Display"
+#: src/settings/userlist.py:2
+msgid "User List"
 msgstr ""
 
-#: src/settings/monitor.py:4
-msgid "Mirror monitors"
+#: src/settings/userlist.py:4
+msgid "Enable username list"
 msgstr ""
 
-#: src/settings/monitor.py:8
-msgid "Default monitor"
+#: src/settings/userlist.py:8
+msgid "Show real names"
 msgstr ""
 
-#: src/settings/general.py:2
-msgid "General"
-msgstr ""
-
-#: src/settings/general.py:4
-msgid "Scale"
-msgstr ""
-
-#: src/settings/general.py:9
-msgid "GTK theme"
-msgstr ""
-
-#: src/settings/general.py:15
-msgid "Icon theme"
-msgstr ""
-
-#: src/settings/general.py:21
-msgid "Font Size"
-msgstr ""
-
-#: src/settings/general.py:26
-msgid "Prefer dark theme"
-msgstr ""
-
-#: src/settings/general.py:30
-msgid "Black screen timeout (sec)"
-msgstr ""
-
-#: src/settings/general.py:34
-msgid "Initial command"
-msgstr ""
-
-#: src/settings/general.py:38
-msgid "Start command before login"
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
 msgstr ""

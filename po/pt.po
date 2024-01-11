@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-21 12:35+0000\n"
+"POT-Creation-Date: 2024-01-11 10:28+0000\n"
 "PO-Revision-Date: 2023-08-28 23:11+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
@@ -43,38 +43,6 @@ msgstr "Não"
 msgid "Yes"
 msgstr "Sim"
 
-#: src/settings/lightdm.py:2
-msgid "Lightdm"
-msgstr "Lightdm"
-
-#: src/settings/lightdm.py:4
-msgid "Allow login as root"
-msgstr "Permitir iniciar sessão como root"
-
-#: src/settings/lightdm.py:8
-msgid "Allow autologin"
-msgstr "Permitir inicio de sessão automático"
-
-#: src/settings/lightdm.py:12
-msgid "Autologin username"
-msgstr "Nome de utilizador do início de sessão automático"
-
-#: src/settings/userlist.py:2
-msgid "User List"
-msgstr "Lista de utilizadores"
-
-#: src/settings/userlist.py:4
-msgid "Enable username list"
-msgstr "Ativar lista de utilizadores"
-
-#: src/settings/userlist.py:8
-msgid "Show real names"
-msgstr "Mostrar os nomes verdadeiros"
-
-#: src/settings/userlist.py:12
-msgid "Enable hide user button"
-msgstr "Ativar o botão de ocultar o utilizador"
-
 #: src/settings/general.py:2
 msgid "General"
 msgstr "Geral"
@@ -100,14 +68,18 @@ msgid "Prefer dark theme"
 msgstr "Preferir tema escuro"
 
 #: src/settings/general.py:30
+msgid "Touch screen mode"
+msgstr ""
+
+#: src/settings/general.py:34
 msgid "Black screen timeout (sec)"
 msgstr "Tempo limite do ecrã em branco (seg)"
 
-#: src/settings/general.py:34
+#: src/settings/general.py:38
 msgid "Initial command"
 msgstr "Comando inicial"
 
-#: src/settings/general.py:38
+#: src/settings/general.py:42
 msgid "Start command before login"
 msgstr "Executar o comando antes de iniciar sessão"
 
@@ -122,6 +94,22 @@ msgstr "Espelhar monitores"
 #: src/settings/monitor.py:8
 msgid "Default monitor"
 msgstr "Monitor predefinido"
+
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr "Lightdm"
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr "Permitir iniciar sessão como root"
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr "Permitir inicio de sessão automático"
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
+msgstr "Nome de utilizador do início de sessão automático"
 
 #: src/settings/gtkwindow.py:2
 msgid "GTK Window"
@@ -150,3 +138,19 @@ msgstr "Memorizar o último nome de utilizador"
 #: src/settings/gtkwindow.py:22
 msgid "Custom logo"
 msgstr "Logótipo personalizado"
+
+#: src/settings/userlist.py:2
+msgid "User List"
+msgstr "Lista de utilizadores"
+
+#: src/settings/userlist.py:4
+msgid "Enable username list"
+msgstr "Ativar lista de utilizadores"
+
+#: src/settings/userlist.py:8
+msgid "Show real names"
+msgstr "Mostrar os nomes verdadeiros"
+
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
+msgstr "Ativar o botão de ocultar o utilizador"
