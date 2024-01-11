@@ -25,7 +25,8 @@ self.settings["main"].set_data("font-size", {
 self.settings["main"].set_data("dark-theme", {
     "label": _("Prefer dark theme"),
     "value": config.get("dark-theme", "true")
-})self.settings["main"].set_data("touch-mode", {
+})
+self.settings["main"].set_data("touch-mode", {
     "label": _("Touch screen mode"),
     "value": config.get("touch-mode", "false")
 })
