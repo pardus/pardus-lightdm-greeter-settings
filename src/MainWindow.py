@@ -53,7 +53,7 @@ class MainWindow(Gtk.Window):
         box.pack_start(box2, False, False, 3)
 
         # bottom box
-        box2.pack_start(Gtk.Label("TÜBİTAK ULAKBİM | 2023"), False, False, 13)
+        box2.pack_start(Gtk.Label("TÜBİTAK ULAKBİM | 2024"), False, False, 13)
         box2.pack_start(Gtk.Label(), True, True, 0)
         box2.pack_start(box3, False, False, 0)
 
