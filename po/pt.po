@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2023.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-11 10:28+0000\n"
-"PO-Revision-Date: 2023-08-28 23:11+0100\n"
+"PO-Revision-Date: 2024-01-29 00:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: src/MainWindow.py:30 src/MainWindow.py:76
 msgid "Pardus Lightdm Settings"
@@ -69,7 +69,7 @@ msgstr "Preferir tema escuro"
 
 #: src/settings/general.py:30
 msgid "Touch screen mode"
-msgstr ""
+msgstr "Modo de ecrã tátil"
 
 #: src/settings/general.py:34
 msgid "Black screen timeout (sec)"
