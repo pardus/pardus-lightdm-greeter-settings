@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 10:08+0300\n"
+"POT-Creation-Date: 2024-04-29 10:10+0300\n"
 "PO-Revision-Date: 2024-01-29 00:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
@@ -35,13 +35,14 @@ msgstr "Mostrar os nomes verdadeiros"
 msgid "Enable hide user button"
 msgstr "Ativar o botão de ocultar o utilizador"
 
-#: src/settings/notes.py:2 src/settings/monitor.py:2
-msgid "Display"
-msgstr "Ecrã"
+#: src/settings/notes.py:2
+msgid "Notes"
+msgstr ""
 
 #: src/settings/notes.py:4
-msgid "Enable Notes"
-msgstr ""
+#, fuzzy
+msgid "Enable notes"
+msgstr "Ativar lista de utilizadores"
 
 #: src/settings/notes.py:8
 msgid "Editable"
@@ -50,6 +51,10 @@ msgstr ""
 #: src/settings/notes.py:12
 msgid "Text file"
 msgstr ""
+
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr "Ecrã"
 
 #: src/settings/monitor.py:4
 msgid "Mirror monitors"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 10:08+0300\n"
+"POT-Creation-Date: 2024-04-29 10:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,12 +33,12 @@ msgstr ""
 msgid "Enable hide user button"
 msgstr ""
 
-#: src/settings/notes.py:2 src/settings/monitor.py:2
-msgid "Display"
+#: src/settings/notes.py:2
+msgid "Notes"
 msgstr ""
 
 #: src/settings/notes.py:4
-msgid "Enable Notes"
+msgid "Enable notes"
 msgstr ""
 
 #: src/settings/notes.py:8
@@ -47,6 +47,10 @@ msgstr ""
 
 #: src/settings/notes.py:12
 msgid "Text file"
+msgstr ""
+
+#: src/settings/monitor.py:2
+msgid "Display"
 msgstr ""
 
 #: src/settings/monitor.py:4

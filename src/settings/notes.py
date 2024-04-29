@@ -1,7 +1,7 @@
 # General
-_("Display")
+_("Notes")
 self.settings["notes"].set_data("enabled", {
-    "label": _("Enable Notes"),
+    "label": _("Enable notes"),
     "value": config.get("notes", "true", "enabled"),
 })
 self.settings["notes"].set_data("editable", {

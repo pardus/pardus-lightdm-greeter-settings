@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 10:08+0300\n"
+"POT-Creation-Date: 2024-04-29 10:10+0300\n"
 "PO-Revision-Date: 2023-08-29 01:21+0300\n"
 "Last-Translator: Fatih Altun <fatih.altun@pardus.org.tr>\n"
 "Language-Team: Turkish <dev@pardus.org.tr>\n"
@@ -35,12 +35,12 @@ msgstr "Gerçek isimleri göster"
 msgid "Enable hide user button"
 msgstr "Kullanıcı gizleme düğmesini etkinleştir"
 
-#: src/settings/notes.py:2 src/settings/monitor.py:2
-msgid "Display"
-msgstr "Ekran"
+#: src/settings/notes.py:2
+msgid "Notes"
+msgstr "Notlar"
 
 #: src/settings/notes.py:4
-msgid "Enable Notes"
+msgid "Enable notes"
 msgstr "Notları etkinleştir"
 
 #: src/settings/notes.py:8
@@ -50,6 +50,10 @@ msgstr "Düzenlenebilir"
 #: src/settings/notes.py:12
 msgid "Text file"
 msgstr "Yazı dosyası"
+
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr "Ekran"
 
 #: src/settings/monitor.py:4
 msgid "Mirror monitors"
