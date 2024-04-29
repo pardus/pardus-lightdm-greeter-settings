@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-11 10:28+0000\n"
+"POT-Creation-Date: 2024-04-29 10:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,28 +17,44 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.py:30 src/MainWindow.py:76
-msgid "Pardus Lightdm Settings"
+#: src/settings/userlist.py:2
+msgid "User List"
 msgstr ""
 
-#: src/MainWindow.py:45
-msgid "Save"
+#: src/settings/userlist.py:4
+msgid "Enable username list"
 msgstr ""
 
-#: src/MainWindow.py:48
-msgid "Close"
+#: src/settings/userlist.py:8
+msgid "Show real names"
 msgstr ""
 
-#: src/MainWindow.py:77
-msgid "Are you want to save current settings?"
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
 msgstr ""
 
-#: src/MainWindow.py:78
-msgid "No"
+#: src/settings/notes.py:2 src/settings/monitor.py:2
+msgid "Display"
 msgstr ""
 
-#: src/MainWindow.py:79
-msgid "Yes"
+#: src/settings/notes.py:4
+msgid "Enable Notes"
+msgstr ""
+
+#: src/settings/notes.py:8
+msgid "Editable"
+msgstr ""
+
+#: src/settings/notes.py:12
+msgid "Text file"
+msgstr ""
+
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr ""
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
 msgstr ""
 
 #: src/settings/general.py:2
@@ -79,18 +95,6 @@ msgstr ""
 
 #: src/settings/general.py:42
 msgid "Start command before login"
-msgstr ""
-
-#: src/settings/monitor.py:2
-msgid "Display"
-msgstr ""
-
-#: src/settings/monitor.py:4
-msgid "Mirror monitors"
-msgstr ""
-
-#: src/settings/monitor.py:8
-msgid "Default monitor"
 msgstr ""
 
 #: src/settings/lightdm.py:2
@@ -137,18 +141,26 @@ msgstr ""
 msgid "Custom logo"
 msgstr ""
 
-#: src/settings/userlist.py:2
-msgid "User List"
+#: src/MainWindow.py:31 src/MainWindow.py:77
+msgid "Pardus Lightdm Settings"
 msgstr ""
 
-#: src/settings/userlist.py:4
-msgid "Enable username list"
+#: src/MainWindow.py:46
+msgid "Save"
 msgstr ""
 
-#: src/settings/userlist.py:8
-msgid "Show real names"
+#: src/MainWindow.py:49
+msgid "Close"
 msgstr ""
 
-#: src/settings/userlist.py:12
-msgid "Enable hide user button"
+#: src/MainWindow.py:78
+msgid "Are you want to save current settings?"
+msgstr ""
+
+#: src/MainWindow.py:79
+msgid "No"
+msgstr ""
+
+#: src/MainWindow.py:80
+msgid "Yes"
 msgstr ""
