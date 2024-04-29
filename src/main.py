@@ -3,8 +3,9 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-import sys
-sys.path.insert(0, '/usr/share/pardus/pardus-lightdm-greeter-settings/')
+import sys, os
+appdir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, appdir)
 from MainWindow import MainWindow
 
 win = MainWindow()

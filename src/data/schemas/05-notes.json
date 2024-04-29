@@ -1,0 +1,15 @@
+{
+  "pardus": {
+      "title": "Notes",
+      "name": "notes"
+  },
+  "enabled": {
+    "type": "onoff"
+  },
+  "editable": {
+    "type": "onoff"
+  },
+  "text-file": {
+    "type": "filepicker"
+  }
+}
