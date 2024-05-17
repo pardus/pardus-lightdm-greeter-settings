@@ -14,3 +14,4 @@ Terminal=false
 Type=Application
 Categories=Settings;X-Pardus-Apps;
 StartupNotify=true
+StartupWMClass=pardus-lightdm-greeter-settings

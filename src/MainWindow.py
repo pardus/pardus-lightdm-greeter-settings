@@ -31,7 +31,7 @@ class MainWindow(Gtk.Window):
         Gtk.Window.__init__(self, title=_("Pardus Lightdm Settings"))
         self.set_icon_name("pardus-lightdm-greeter-settings")
 
-
+        self.set_wmclass("pardus-lightdm-greeter-settings", "pardus-lightdm-greeter-settings")
 
         # Create Notebook
         self.notebook = Gtk.Notebook()
