@@ -1,3 +1,18 @@
+pardus-lightdm-greeter-settings (0.0.4) unstable; urgency=medium
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translations
+  * Add Portuguese translation
+
+  [ Ali Riza KESKIN ]
+  * note settings
+  * translation
+  * typo fix
+  * fix settings reading for notes
+  * add wmclass
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Tue, 16 Jul 2024 12:29:51 +0300
+
 pardus-lightdm-greeter-settings (0.0.3) unstable; urgency=medium
 
   [ aliriza ]
