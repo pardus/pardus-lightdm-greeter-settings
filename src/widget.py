@@ -23,6 +23,13 @@ class object_onoff(settings_object):
         self.pack_start(Gtk.Label(), True, True, 3)
         self.pack_start(self.switch, False, False, 3)
         self.show_all()
+        self.switch.connect("state-set", self.__state_event)
+        self.state_event = None
+
+    def __state_event(self, widget, state):
+        if self.state_event:
+            self.state_event(widget, state)
+
 
     def set_data(self, data):
         if "label" in data:

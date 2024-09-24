@@ -6,9 +6,7 @@
   "mirror": {
     "type": "onoff"
   },
-  "default-monitor": {
-    "type": "number",
-    "min" : "0",
-    "max": "99"
+  "default-monitor-name": {
+    "type": "combo"
   }
 }

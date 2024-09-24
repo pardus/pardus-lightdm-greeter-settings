@@ -2,12 +2,15 @@ import configparser
 import os, sys
 
 if os.path.isdir("/usr/share/pardus/pardus-lightdm-greeter/module"):
-    sys.path.insert("/usr/share/pardus/pardus-lightdm-greeter/module", 0)
+    sys.path.insert(0, "/usr/share/pardus/pardus-lightdm-greeter/module")
 
 import monitor
 m = monitor.monitor_class()
 def list_monitors():
-    return m.get_drm_monitors()
+    ret = []
+    for mon in m.get_drm_monitors():
+        ret.append(mon+":"+mon)
+    return ret
 
 def list_gtk_themes():
     ret = []
