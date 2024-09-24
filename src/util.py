@@ -8,7 +8,7 @@ import monitor
 m = monitor.monitor_class()
 def list_monitors():
     ret = []
-    for mon in m.get_drm_monitors():
+    for mon in m.get_monitors():
         ret.append(mon+":"+mon)
     return ret
 
