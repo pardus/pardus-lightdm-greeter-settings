@@ -1,7 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2023, 2024.
 #
 msgid ""
@@ -9,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-29 10:10+0300\n"
-"PO-Revision-Date: 2024-01-29 00:09+0000\n"
+"PO-Revision-Date: 2024-09-26 16:28+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -17,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/settings/userlist.py:2
 msgid "User List"
@@ -37,20 +36,19 @@ msgstr "Ativar o botão de ocultar o utilizador"
 
 #: src/settings/notes.py:2
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: src/settings/notes.py:4
-#, fuzzy
 msgid "Enable notes"
-msgstr "Ativar lista de utilizadores"
+msgstr "Ativar notas"
 
 #: src/settings/notes.py:8
 msgid "Editable"
-msgstr ""
+msgstr "Editável"
 
 #: src/settings/notes.py:12
 msgid "Text file"
-msgstr ""
+msgstr "Ficheiro de texto"
 
 #: src/settings/monitor.py:2
 msgid "Display"
