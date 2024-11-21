@@ -1,0 +1,93 @@
+pardus-lightdm-greeter-settings (0.0.4) unstable; urgency=medium
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translations
+  * Add Portuguese translation
+
+  [ Ali Riza KESKIN ]
+  * note settings
+  * translation
+  * typo fix
+  * fix settings reading for notes
+  * add wmclass
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Tue, 16 Jul 2024 12:29:51 +0300
+
+pardus-lightdm-greeter-settings (0.0.3) unstable; urgency=medium
+
+  [ aliriza ]
+  * fix default monitor min value
+  * touch screen mode settings added
+  * touch screen mode settings added
+  * translation update
+
+  [ Fatih Altun ]
+  * Update copyright to 2024
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Tue, 16 Jan 2024 11:08:40 +0300
+
+pardus-lightdm-greeter-settings (0.0.2) unstable; urgency=medium
+
+  [ Hugo Carvalho ]
+  * Add Portuguese translation
+
+  [ Sabri Ünal ]
+  * data: Update Turkish translation
+
+  [ Fatih Altun ]
+  * Fix typo
+  * Update pot file
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translation
+
+  [ Fatih Altun ]
+  * Update Turkish translations
+  * Fix typo
+  * Update pot file
+  * Update Turkish translations
+  * Fix typo
+  * Fix typo
+  * Update msgids for pt.po
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Tue, 29 Aug 2023 01:40:25 +0300
+
+pardus-lightdm-greeter-settings (0.0.1) unstable; urgency=medium
+
+  [ Ali Riza Keskin ]
+  * initial commit
+  * fix debian packaging
+  * fix polkit rule
+  * translation
+  * fix 0 digit number picker widget
+  * autologin user backend
+  * reset button
+  * apply buton added
+  * save apply cancel orderx
+  * background image copy if starts with /home
+  * fix replace wallpaper issue
+  * minor fixes
+  * lint fixes
+  * Gtk theme name fix
+  * save button dialog and remove apply button
+  * update icon
+  * fix category
+  * fix missing window icon
+  * pkexec move to saveconfig.py file
+  * fix polkit path and minor fixes
+  * desktop file name changed
+  * gitignore additions
+  * minor fixes
+  * minor fixes
+  * update icon
+  * gtk theme name
+  * minor fix
+  * missing translation fix for image selection
+
+  [ Fatih Altun ]
+  * Rm unnecessary files
+  * Fix typo
+  * Update copyright
+  * Update debian standards
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Mon, 21 Aug 2023 16:14:12 +0300

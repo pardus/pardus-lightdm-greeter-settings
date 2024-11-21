@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unnamed project\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 10:10+0300\n"
+"POT-Creation-Date: 2024-11-21 10:40+0300\n"
 "PO-Revision-Date: 2023-08-29 01:21+0300\n"
 "Last-Translator: Fatih Altun <fatih.altun@pardus.org.tr>\n"
 "Language-Team: Turkish <dev@pardus.org.tr>\n"
@@ -19,21 +19,45 @@ msgstr ""
 "X-Generator: Gtranslator 3.38.0\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: src/settings/userlist.py:2
-msgid "User List"
-msgstr "Kullanıcı Listesi"
+#: src/MainWindow.py:31 src/MainWindow.py:77
+msgid "Pardus Lightdm Settings"
+msgstr "Pardus Lightdm Ayarları"
 
-#: src/settings/userlist.py:4
-msgid "Enable username list"
-msgstr "Kullanıcı adı listesini etkinleştir"
+#: src/MainWindow.py:46
+msgid "Save"
+msgstr "Kaydet"
 
-#: src/settings/userlist.py:8
-msgid "Show real names"
-msgstr "Gerçek isimleri göster"
+#: src/MainWindow.py:49
+msgid "Close"
+msgstr "Kapat"
 
-#: src/settings/userlist.py:12
-msgid "Enable hide user button"
-msgstr "Kullanıcı gizleme düğmesini etkinleştir"
+#: src/MainWindow.py:78
+msgid "Are you want to save current settings?"
+msgstr "Mevcut ayarları kaydetmek istiyor musunuz?"
+
+#: src/MainWindow.py:79
+msgid "No"
+msgstr "Hayır"
+
+#: src/MainWindow.py:80
+msgid "Yes"
+msgstr "Evet"
+
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr "Lightdm"
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr "Root ile girişi kabul et"
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr "Otomatik girişi kabul et"
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
+msgstr "Otomatik giriş kullanıcı adı"
 
 #: src/settings/notes.py:2
 msgid "Notes"
@@ -50,18 +74,6 @@ msgstr "Düzenlenebilir"
 #: src/settings/notes.py:12
 msgid "Text file"
 msgstr "Yazı dosyası"
-
-#: src/settings/monitor.py:2
-msgid "Display"
-msgstr "Ekran"
-
-#: src/settings/monitor.py:4
-msgid "Mirror monitors"
-msgstr "Ekranları yansıla"
-
-#: src/settings/monitor.py:8
-msgid "Default monitor"
-msgstr "Varsayılan ekran"
 
 #: src/settings/general.py:2
 msgid "General"
@@ -103,22 +115,6 @@ msgstr "Başlangıç komutu"
 msgid "Start command before login"
 msgstr "Girişten önce komutu çalıştır"
 
-#: src/settings/lightdm.py:2
-msgid "Lightdm"
-msgstr "Lightdm"
-
-#: src/settings/lightdm.py:4
-msgid "Allow login as root"
-msgstr "Root ile girişi kabul et"
-
-#: src/settings/lightdm.py:8
-msgid "Allow autologin"
-msgstr "Otomatik girişi kabul et"
-
-#: src/settings/lightdm.py:12
-msgid "Autologin username"
-msgstr "Otomatik giriş kullanıcı adı"
-
 #: src/settings/gtkwindow.py:2
 msgid "GTK Window"
 msgstr "GTK Penceresi"
@@ -127,46 +123,60 @@ msgstr "GTK Penceresi"
 msgid "Background image"
 msgstr "Arka plan resmi"
 
-#: src/settings/gtkwindow.py:5 src/settings/gtkwindow.py:24
+#: src/settings/gtkwindow.py:5 src/settings/gtkwindow.py:33
 msgid "Select an image"
 msgstr "Bir resim seçin"
 
 #: src/settings/gtkwindow.py:10
+#, fuzzy
+msgid "Background blur"
+msgstr "Arka plan bulanıklığı"
+
+#: src/settings/gtkwindow.py:14
+#, fuzzy
+msgid "Background blur level"
+msgstr "Arka plan bulanıklık seviyesi"
+
+#: src/settings/gtkwindow.py:19
 msgid "Allow empty password"
 msgstr "Boş parola kabul et"
 
-#: src/settings/gtkwindow.py:14
+#: src/settings/gtkwindow.py:23
 msgid "Login without enter"
 msgstr "Enter olmadan giriş"
 
-#: src/settings/gtkwindow.py:18
+#: src/settings/gtkwindow.py:27
 msgid "Remember last username"
 msgstr "Son kullanıcı adını hatırla"
 
-#: src/settings/gtkwindow.py:22
+#: src/settings/gtkwindow.py:31
 msgid "Custom logo"
 msgstr "Özel logo"
 
-#: src/MainWindow.py:31 src/MainWindow.py:77
-msgid "Pardus Lightdm Settings"
-msgstr "Pardus Lightdm Ayarları"
+#: src/settings/userlist.py:2
+msgid "User List"
+msgstr "Kullanıcı Listesi"
 
-#: src/MainWindow.py:46
-msgid "Save"
-msgstr "Kaydet"
+#: src/settings/userlist.py:4
+msgid "Enable username list"
+msgstr "Kullanıcı adı listesini etkinleştir"
 
-#: src/MainWindow.py:49
-msgid "Close"
-msgstr "Kapat"
+#: src/settings/userlist.py:8
+msgid "Show real names"
+msgstr "Gerçek isimleri göster"
 
-#: src/MainWindow.py:78
-msgid "Are you want to save current settings?"
-msgstr "Mevcut ayarları kaydetmek istiyor musunuz?"
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
+msgstr "Kullanıcı gizleme düğmesini etkinleştir"
 
-#: src/MainWindow.py:79
-msgid "No"
-msgstr "Hayır"
+#: src/settings/monitor.py:2
+msgid "Display"
+msgstr "Ekran"
 
-#: src/MainWindow.py:80
-msgid "Yes"
-msgstr "Evet"
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr "Ekranları yansıla"
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
+msgstr "Varsayılan ekran"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 10:10+0300\n"
+"POT-Creation-Date: 2024-11-21 10:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,44 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/settings/userlist.py:2
-msgid "User List"
+#: src/MainWindow.py:31 src/MainWindow.py:77
+msgid "Pardus Lightdm Settings"
 msgstr ""
 
-#: src/settings/userlist.py:4
-msgid "Enable username list"
+#: src/MainWindow.py:46
+msgid "Save"
 msgstr ""
 
-#: src/settings/userlist.py:8
-msgid "Show real names"
+#: src/MainWindow.py:49
+msgid "Close"
 msgstr ""
 
-#: src/settings/userlist.py:12
-msgid "Enable hide user button"
+#: src/MainWindow.py:78
+msgid "Are you want to save current settings?"
+msgstr ""
+
+#: src/MainWindow.py:79
+msgid "No"
+msgstr ""
+
+#: src/MainWindow.py:80
+msgid "Yes"
+msgstr ""
+
+#: src/settings/lightdm.py:2
+msgid "Lightdm"
+msgstr ""
+
+#: src/settings/lightdm.py:4
+msgid "Allow login as root"
+msgstr ""
+
+#: src/settings/lightdm.py:8
+msgid "Allow autologin"
+msgstr ""
+
+#: src/settings/lightdm.py:12
+msgid "Autologin username"
 msgstr ""
 
 #: src/settings/notes.py:2
@@ -47,18 +71,6 @@ msgstr ""
 
 #: src/settings/notes.py:12
 msgid "Text file"
-msgstr ""
-
-#: src/settings/monitor.py:2
-msgid "Display"
-msgstr ""
-
-#: src/settings/monitor.py:4
-msgid "Mirror monitors"
-msgstr ""
-
-#: src/settings/monitor.py:8
-msgid "Default monitor"
 msgstr ""
 
 #: src/settings/general.py:2
@@ -101,22 +113,6 @@ msgstr ""
 msgid "Start command before login"
 msgstr ""
 
-#: src/settings/lightdm.py:2
-msgid "Lightdm"
-msgstr ""
-
-#: src/settings/lightdm.py:4
-msgid "Allow login as root"
-msgstr ""
-
-#: src/settings/lightdm.py:8
-msgid "Allow autologin"
-msgstr ""
-
-#: src/settings/lightdm.py:12
-msgid "Autologin username"
-msgstr ""
-
 #: src/settings/gtkwindow.py:2
 msgid "GTK Window"
 msgstr ""
@@ -125,46 +121,58 @@ msgstr ""
 msgid "Background image"
 msgstr ""
 
-#: src/settings/gtkwindow.py:5 src/settings/gtkwindow.py:24
+#: src/settings/gtkwindow.py:5 src/settings/gtkwindow.py:33
 msgid "Select an image"
 msgstr ""
 
 #: src/settings/gtkwindow.py:10
-msgid "Allow empty password"
+msgid "Background blur"
 msgstr ""
 
 #: src/settings/gtkwindow.py:14
+msgid "Background blur level"
+msgstr ""
+
+#: src/settings/gtkwindow.py:19
+msgid "Allow empty password"
+msgstr ""
+
+#: src/settings/gtkwindow.py:23
 msgid "Login without enter"
 msgstr ""
 
-#: src/settings/gtkwindow.py:18
+#: src/settings/gtkwindow.py:27
 msgid "Remember last username"
 msgstr ""
 
-#: src/settings/gtkwindow.py:22
+#: src/settings/gtkwindow.py:31
 msgid "Custom logo"
 msgstr ""
 
-#: src/MainWindow.py:31 src/MainWindow.py:77
-msgid "Pardus Lightdm Settings"
+#: src/settings/userlist.py:2
+msgid "User List"
 msgstr ""
 
-#: src/MainWindow.py:46
-msgid "Save"
+#: src/settings/userlist.py:4
+msgid "Enable username list"
 msgstr ""
 
-#: src/MainWindow.py:49
-msgid "Close"
+#: src/settings/userlist.py:8
+msgid "Show real names"
 msgstr ""
 
-#: src/MainWindow.py:78
-msgid "Are you want to save current settings?"
+#: src/settings/userlist.py:12
+msgid "Enable hide user button"
 msgstr ""
 
-#: src/MainWindow.py:79
-msgid "No"
+#: src/settings/monitor.py:2
+msgid "Display"
 msgstr ""
 
-#: src/MainWindow.py:80
-msgid "Yes"
+#: src/settings/monitor.py:4
+msgid "Mirror monitors"
+msgstr ""
+
+#: src/settings/monitor.py:8
+msgid "Default monitor"
 msgstr ""
