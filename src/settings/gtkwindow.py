@@ -6,6 +6,15 @@ self.settings["gtkwindow"].set_data("background", {
     "value": config.get("background", "user", "gtkwindow"),
     "default": "user"
 })
+self.settings["gtkwindow"].set_data("background-blur", {
+    "label": _("Background blur"),
+    "value": config.get("background-blur", "false", "gtkwindow")
+})
+self.settings["gtkwindow"].set_data("background-blur-level", {
+    "label": _("Background blur level"),
+    "value": config.get("background-blur-level", "15"),
+    "digit": "0"
+})
 self.settings["gtkwindow"].set_data("allow-empty-password", {
     "label": _("Allow empty password"),
     "value": config.get("allow-empty-password", "true", "gtkwindow")

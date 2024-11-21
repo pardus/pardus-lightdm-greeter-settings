@@ -6,6 +6,14 @@
   "background": {
       "type": "filepicker"
   },
+  "background-blur": {
+    "type": "onoff"
+  },
+  "background-blur-level": {
+    "type": "number",
+    "min": "0",
+    "max": "100"
+  },
   "logo": {
     "type": "filepicker"
   },
