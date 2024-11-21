@@ -128,12 +128,10 @@ msgid "Select an image"
 msgstr "Bir resim seçin"
 
 #: src/settings/gtkwindow.py:10
-#, fuzzy
 msgid "Background blur"
 msgstr "Arka plan bulanıklığı"
 
 #: src/settings/gtkwindow.py:14
-#, fuzzy
 msgid "Background blur level"
 msgstr "Arka plan bulanıklık seviyesi"
 

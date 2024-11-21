@@ -5,3 +5,5 @@ debian/pardus-lightdm-greeter-settings.debhelper.log
 debian/debian/pardus-lightdm-greeter-settings.substvars
 debian/files
 debhelper-build-stamp
+debian/.debhelper
+debian/pardus-lightdm-greeter-settings.substvars
