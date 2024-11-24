@@ -1,6 +1,6 @@
-# SOME DESCRIPTIVE TITLE.
+# Portuguese translation for pardus-lightdm-greeter-settings.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the pardus-lightdm-greeter-settings package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2023, 2024.
 #
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-21 10:40+0300\n"
-"PO-Revision-Date: 2024-01-29 00:09+0000\n"
+"PO-Revision-Date: 2024-11-24 22:07+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/MainWindow.py:31 src/MainWindow.py:77
 msgid "Pardus Lightdm Settings"
@@ -61,20 +61,19 @@ msgstr "Nome de utilizador do início de sessão automático"
 
 #: src/settings/notes.py:2
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: src/settings/notes.py:4
-#, fuzzy
 msgid "Enable notes"
-msgstr "Ativar lista de utilizadores"
+msgstr "Ativar notas"
 
 #: src/settings/notes.py:8
 msgid "Editable"
-msgstr ""
+msgstr "Editável"
 
 #: src/settings/notes.py:12
 msgid "Text file"
-msgstr ""
+msgstr "Ficheiro de texto"
 
 #: src/settings/general.py:2
 msgid "General"
@@ -129,14 +128,12 @@ msgid "Select an image"
 msgstr "Selecionar uma imagem"
 
 #: src/settings/gtkwindow.py:10
-#, fuzzy
 msgid "Background blur"
-msgstr "Imagem de fundo"
+msgstr "Desfocagem do fundo"
 
 #: src/settings/gtkwindow.py:14
-#, fuzzy
 msgid "Background blur level"
-msgstr "Imagem de fundo"
+msgstr "Nível de desfocagem do fundo"
 
 #: src/settings/gtkwindow.py:19
 msgid "Allow empty password"
