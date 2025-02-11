@@ -11,9 +11,12 @@ self.settings["monitor"].set_data("default-monitor-name", {
 })
 
 settings = self.settings
+
+
 def mirror_state_event(widget, state):
     global settings
-    settings["monitor"].widgets["default-monitor-name"].set_sensitive(not state)
+    settings["monitor"].widgets["default-monitor-name"].set_sensitive(
+        not state)
 
 
 state = config.get("mirror", "true", "screen").lower() == "true"

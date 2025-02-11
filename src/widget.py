@@ -1,10 +1,11 @@
 import config
 import json
-import gi
 import os
 
+import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+
 
 class settings_object(Gtk.Box):
     def __init__(self):
@@ -29,7 +30,6 @@ class object_onoff(settings_object):
     def __state_event(self, widget, state):
         if self.state_event:
             self.state_event(widget, state)
-
 
     def set_data(self, data):
         if "label" in data:
@@ -135,8 +135,7 @@ class object_filepicker(settings_object):
     def get_value(self):
         if self.path:
             return self.path
-        else:
-            return self.default
+        return self.default
 
 
 class object_number(settings_object):
@@ -217,7 +216,7 @@ class object_selection(settings_object):
                     for item in self.__opts:
                         if item.startswith(value+":") or item.endswith(value+":"):
                             break
-                        i+=1
+                        i += 1
                 self.combo.set_active(i)
             print(data, self.__opts)
 
@@ -233,13 +232,13 @@ class Dialog(Gtk.MessageDialog):
     def __init__(self, style, buttons, title, text, text2=None, parent=None):
         Gtk.MessageDialog.__init__(self, parent, 0, style, buttons)
         self.set_position(Gtk.WindowPosition.CENTER)
-        #self.set_icon_from_file("./branding/icon.svg")
+        # self.set_icon_from_file("./branding/icon.svg")
         self.set_title(title)
         if text:
-            self.set_property("text",text)
+            self.set_property("text", text)
             self.desc = text[:30] + ' ...' if len(text) > 30 else text
         if text2:
-            self.set_property("secondary_text",text2)
+            self.set_property("secondary_text", text2)
         if parent:
             self.set_transient_for(parent)
             self.set_modal(True)

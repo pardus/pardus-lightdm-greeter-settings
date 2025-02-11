@@ -1,12 +1,12 @@
-import shutil
 import subprocess
-import util
 from widget import *
-import gi
 import os
 
+import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+
+import util
 
 APPDIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -31,7 +31,8 @@ class MainWindow(Gtk.Window):
         Gtk.Window.__init__(self, title=_("Pardus Lightdm Settings"))
         self.set_icon_name("pardus-lightdm-greeter-settings")
 
-        self.set_wmclass("pardus-lightdm-greeter-settings", "pardus-lightdm-greeter-settings")
+        self.set_wmclass("pardus-lightdm-greeter-settings",
+                         "pardus-lightdm-greeter-settings")
 
         # Create Notebook
         self.notebook = Gtk.Notebook()
@@ -102,7 +103,10 @@ class MainWindow(Gtk.Window):
         if "lightdm" in self.settings:
             autologin_user = self.settings["lightdm"].get_value(
                 "autologin-user")
-        subprocess.run(["pkexec", APPDIR+"/saveconfig.py", inidata, background, autologin_user])
+        subprocess.run(["pkexec", APPDIR+"/saveconfig.py",
+                       inidata, background, autologin_user],
+                       shell=True, check=True)
+
     def init_pages(self):
         pages = os.listdir("{}/data/schemas/".format(APPDIR))
         pages.sort()

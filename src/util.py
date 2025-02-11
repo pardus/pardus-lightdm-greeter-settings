@@ -1,16 +1,20 @@
 import configparser
-import os, sys
+import os
+import sys
 
 if os.path.isdir("/usr/share/pardus/pardus-lightdm-greeter/module"):
     sys.path.insert(0, "/usr/share/pardus/pardus-lightdm-greeter/module")
 
 import monitor
 m = monitor.monitor_class()
+
+
 def list_monitors():
     ret = []
     for mon in m.get_monitors():
         ret.append(mon+":"+mon)
     return ret
+
 
 def list_gtk_themes():
     ret = []
@@ -18,6 +22,7 @@ def list_gtk_themes():
         if os.path.isfile("/usr/share/themes/{}/gtk-3.0/gtk.css".format(dir)):
             ret.append(dir+":"+dir)
     return ret
+
 
 def list_icon_themes():
     ret = []
@@ -33,4 +38,3 @@ def readfile(path):
     f.close()
     del (f)
     return ret
-
