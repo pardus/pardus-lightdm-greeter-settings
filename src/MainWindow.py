@@ -105,7 +105,7 @@ class MainWindow(Gtk.Window):
                 "autologin-user")
         subprocess.run(["pkexec", APPDIR+"/saveconfig.py",
                        inidata, background, autologin_user],
-                       shell=True, check=True)
+                       check=True)
 
     def init_pages(self):
         pages = os.listdir("{}/data/schemas/".format(APPDIR))

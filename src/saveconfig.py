@@ -2,7 +2,7 @@
 import sys
 import os
 import shutil
-print(sys.argv)
+# print(sys.argv)
 if len(sys.argv) > 2:
     config = sys.argv[1]
     background = sys.argv[2]
@@ -15,7 +15,7 @@ if len(sys.argv) > 2:
         if os.path.isfile("/var/lib/lightdm/wallpaper"):
             os.unlink("/var/lib/lightdm/wallpaper")
     autologin_file = "/usr/share/lightdm/lightdm.conf.d/99-pardus-lightdm-greeter-autologin.conf"
-    if not (autologin in ["", None]:
+    if autologin not in ["", None]:
         data = "[Seat:*]\n"
         data += "autologin-user={}\n".format(autologin)
         with open(autologin_file, "w") as f:
