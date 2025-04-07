@@ -1,3 +1,14 @@
+pardus-lightdm-greeter-settings (0.0.6) unstable; urgency=medium
+
+  [ Hugo Carvalho ]
+  * Update Portuguese translations
+
+  [ Ali Riza KESKIN ]
+  * pep8 fixes
+  * typo fix
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Mon, 07 Apr 2025 15:34:33 +0300
+
 pardus-lightdm-greeter-settings (0.0.5) unstable; urgency=medium
 
   [ Ali Riza KESKIN ]
