@@ -7,6 +7,12 @@ import shutil
 import sys
 
 USERNAME_REGEX = re.compile(r"^[a-zA-Z0-9_.][a-zA-Z0-9_.-]*\$?$")
+# Tokens only (onboard, numlockx on, /usr/bin/true). Empty is allowed. No shell metacharacters.
+SAFE_COMMAND = re.compile(
+    r"^(?:/[A-Za-z0-9/_.+-]+|[A-Za-z0-9_.+-]+)(?:\s+[A-Za-z0-9/_.+]+)*$"
+)
+COMMAND_KEYS = {"init", "prestart", "command", "window-manager", "screen-keyboard"}
+NOTES_FILE_PREFIXES = ("/usr/share/", "/etc/pardus/")
 ALLOWED_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".svg"}
 MAX_WALLPAPER_SIZE = 50 * 1024 * 1024  # 50 MB
 
@@ -25,6 +31,38 @@ def validate_autologin_user(user):
         return True
     except KeyError:
         return False
+
+
+def validate_command_value(value):
+    if not value:
+        return True
+    if any(c in value for c in "\n\r\0;|&$`<>(){}"):
+        return False
+    return bool(SAFE_COMMAND.match(value.strip()))
+
+
+def validate_notes_text_file(path):
+    if not path:
+        return True
+    if not os.path.isabs(path) or os.path.islink(path):
+        return False
+    real = os.path.realpath(path)
+    if not any(real.startswith(p) for p in NOTES_FILE_PREFIXES):
+        return False
+    return os.path.isfile(real)
+
+
+def validate_greeter_ini(parser):
+    for section in parser.sections():
+        for key, value in parser.items(section):
+            key_l = key.lower()
+            if key_l in COMMAND_KEYS or (section.startswith("button-") and key_l == "command"):
+                if not validate_command_value(value):
+                    return False, f"unsafe {section}.{key} value"
+            if section.lower() == "notes" and key_l == "text-file":
+                if not validate_notes_text_file(value):
+                    return False, f"unsafe notes text-file '{value}'"
+    return True, ""
 
 
 def validate_wallpaper_file(path):
@@ -59,6 +97,10 @@ def main():
             parser.read_string(config)
         except Exception as e:
             sys.stderr.write(f"Error: Invalid configuration format: {e}\n")
+            sys.exit(1)
+        ok, reason = validate_greeter_ini(parser)
+        if not ok:
+            sys.stderr.write(f"Error: {reason}\n")
             sys.exit(1)
 
     # Validate autologin user
